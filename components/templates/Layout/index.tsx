@@ -1,20 +1,20 @@
-import { ReactNode } from 'react'
-
-import SEO from '@templates/SEO'
+import { ReactNode } from 'react';
+import SEO from '@templates/SEO';
+import { StyledLayout } from './Layout.styles';
 
 interface Props {
-	pageTitle: string
-	pageDescription: string
-	children: ReactNode
+	pageTitle: string;
+	pageDescription: string;
+	children: ReactNode;
 }
 
 const Layout: React.FC<Props> = ({ pageTitle, pageDescription, children }) => {
 	return (
-		<div>
+		<StyledLayout>
 			<SEO pageTitle={pageTitle} pageDescription={pageDescription} />
 			{children}
-		</div>
-	)
-}
+		</StyledLayout>
+	);
+};
 
-export default Layout
+export default Layout;

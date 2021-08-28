@@ -1,36 +1,42 @@
-import './button.css'
+import Link from 'next/link';
+import { StyledButton } from './Button.styles';
+import { button__blue, button__red } from '@utils/colors';
 
-interface ButtonProps {
-	primary?: boolean
-	backgroundColor?: string
-	size?: 'small' | 'medium' | 'large'
-	label: string
-	onClick?: () => void
+export interface IButton {
+	title: string;
+	subtitle?: string;
+	color?: 'red' | 'blue';
+	type?: 'primary' | 'secondary';
+	external?: boolean;
+	link?: string;
+	onClick?: () => void;
 }
 
 export const Button = ({
-	primary = false,
-	size = 'medium',
-	backgroundColor,
-	label,
+	title,
+	subtitle,
+	color = 'blue',
+	type = 'primary',
+	external = false,
+	link,
 	...props
-}: ButtonProps) => {
-	const mode = primary
-		? 'storybook-button--primary'
-		: 'storybook-button--secondary'
+}: IButton) => {
+	const ButtonColor = color === 'blue' ? button__blue : button__red;
+	const target = link !== undefined && external === true ? '_blank' : '';
 
-	return (
-		<button
-			type="button"
-			className={[
-				'storybook-button',
-				`storybook-button--${size}`,
-				mode
-			].join(' ')}
-			style={{ backgroundColor }}
-			{...props}
-		>
-			{label}
-		</button>
-	)
-}
+	return link !== undefined ? (
+		<Link href={link}>
+			<a target={target}>
+				<StyledButton className="button" color={ButtonColor} mode={type}>
+					<h1>{title}</h1>
+					<p>{subtitle}</p>
+				</StyledButton>
+			</a>
+		</Link>
+	) : (
+		<StyledButton className="button" color={ButtonColor} mode={type}>
+			<h1>{title}</h1>
+			<p>{subtitle}</p>
+		</StyledButton>
+	);
+};

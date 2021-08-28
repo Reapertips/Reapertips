@@ -1,21 +1,24 @@
-import { ReactNode } from 'react'
-import styled from 'styled-components'
+import { ReactNode } from 'react';
+import styled from 'styled-components';
 
-import { breakpoints } from '@utils/mediaQueries'
+import { breakpoints } from '@utils/mediaQueries';
 
-interface Props {
-	className?: string
-	children: ReactNode
+interface IContainer {
+	className?: string;
+	children: ReactNode;
 }
 
 const StyledContainer = styled.div`
-	width: 80%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 50%;
 	max-width: ${breakpoints.lg}px;
 	margin: 0 auto;
-`
+`;
 
-const Container: React.FC<Props> = ({ className, children }) => {
-	return <StyledContainer className={className}>{children}</StyledContainer>
-}
+const Container = ({ className, children }: IContainer) => {
+	return <StyledContainer className={className}>{children}</StyledContainer>;
+};
 
-export default Container
+export default Container;
