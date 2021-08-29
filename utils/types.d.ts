@@ -19,9 +19,9 @@ export interface ISEO {
 export interface IButton {
 	id: string;
 	title: string;
-	subtitle: string;
-	externalLink: string;
-	link: string;
+	subtitle?: string;
+	externalLink: boolean;
+	link?: string;
 	color: 'red' | 'blue';
 	type: 'primary' | 'secondary';
 }
