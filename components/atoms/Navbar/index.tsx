@@ -8,7 +8,7 @@ interface INavbar {
 export const Navbar = ({ pageTitle }: INavbar) => {
 	return (
 		<StyledNavbar>
-			<Link href="/">
+			<Link href="/" passHref>
 				<StyledLink>
 					<BackArrow src="/icons/nav-back.svg" alt="White left arrow to go back to homepage" />
 				</StyledLink>
