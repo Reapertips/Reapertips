@@ -9,9 +9,6 @@ export interface IProfile {
 export interface ISEO {
 	brandName: string;
 	metaDescription: string;
-	favicon: {
-		url: string;
-	};
 	ogImage: {
 		url: string;
 	};
@@ -39,5 +36,26 @@ export interface IHome extends IPage {
 }
 
 export interface IDownloads extends IPage {
+	topMessageText: string;
+	topMessageIcon: {
+		url: string;
+		alt: string;
+	};
 	posts: IPost[];
+}
+
+export interface ISubmit extends IPage {
+	topMessageText: string;
+	topMessageIcon: {
+		url: string;
+		alt: string;
+	};
+	tipLabel: string;
+	tipDescription: string;
+	tipPlaceholder: string;
+	usernameLabel: string;
+	usernamePlaceholder: string;
+	creditsLabel: string;
+	creditsOptions: string[];
+	submitButton: string;
 }
