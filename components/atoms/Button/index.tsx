@@ -1,31 +1,20 @@
 import Link from 'next/link';
-import { StyledButton } from './Button.styles';
-import { button__blue, button__red } from '@utils/colors';
 
-export interface IButton {
-	id?: string;
-	title: string;
-	subtitle?: string;
-	externalLink: boolean;
-	link?: string;
-	color: 'red' | 'blue';
-	type: 'primary' | 'secondary';
-}
+import { IButton } from '@utils/types';
+import { StyledButton } from './Button.styles';
 
 export const Button = ({
 	title,
 	subtitle,
 	color = 'blue',
-	type = 'primary',
+	mode = 'primary',
 	externalLink = false,
 	link,
 	...props
 }: IButton) => {
-	const ButtonColor = color === 'blue' ? button__blue : button__red;
-
 	if (link === undefined) {
 		return (
-			<StyledButton color={ButtonColor} mode={type}>
+			<StyledButton color={color} mode={mode} {...props}>
 				<h1>{title}</h1>
 				<p>{subtitle}</p>
 			</StyledButton>
@@ -42,7 +31,7 @@ export const Button = ({
 			return (
 				<Link href={getPageLink()}>
 					<a>
-						<StyledButton color={ButtonColor} mode={type}>
+						<StyledButton color={color} mode={mode} {...props}>
 							<h1>{title}</h1>
 							{subtitle && <p>{subtitle}</p>}
 						</StyledButton>
@@ -51,7 +40,7 @@ export const Button = ({
 			);
 		} else {
 			return (
-				<StyledButton as="a" color={ButtonColor} mode={type} href={link} target="_blank" rel="noopener noreferrer">
+				<StyledButton as="a" color={color} mode={mode} href={link} target="_blank" rel="noopener noreferrer" {...props}>
 					<h1>{title}</h1>
 					<p>{subtitle}</p>
 				</StyledButton>

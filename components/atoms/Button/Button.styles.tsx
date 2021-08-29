@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { white } from '@utils/colors';
+import { white, button__blue, button__red } from '@utils/colors';
 
 interface Props {
-	color: string;
+	color: 'red' | 'blue';
 	mode: 'primary' | 'secondary';
 }
 
@@ -13,7 +13,7 @@ export const StyledButton = styled.button<Props>`
 	text-align: center;
 	padding: 1rem 1.25rem;
 	border-radius: 12px;
-	background-color: ${(props) => props.color};
+	background-color: ${(props) => (props.color === 'blue' ? button__blue : button__red)};
 	background: ${(props) => props.mode === 'secondary' && 'none'};
 	border: 0;
 	width: 400px;
@@ -27,11 +27,12 @@ export const StyledButton = styled.button<Props>`
 	}
 
 	h1 {
-		font-size: 1.5rem;
+		font-size: ${(props) => (props.color === 'red' ? '1.5rem' : '1.25rem')};
 	}
 
 	p {
-		margin-top: 0.5rem;
+		margin-top: 0.25rem;
 		opacity: 0.6;
+		font-size: 0.875rem;
 	}
 `;
