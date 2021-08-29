@@ -26,7 +26,12 @@ export const StyledButton = styled.button<Props>`
 		cursor: pointer;
 	}
 
+	h1 {
+		font-size: 1.5rem;
+	}
+
 	p {
+		margin-top: 0.5rem;
 		opacity: 0.6;
 	}
 `;

@@ -3,7 +3,7 @@ import { StyledButton } from './Button.styles';
 import { button__blue, button__red } from '@utils/colors';
 
 export interface IButton {
-	id: string;
+	id?: string;
 	title: string;
 	subtitle?: string;
 	externalLink: boolean;
@@ -44,7 +44,7 @@ export const Button = ({
 					<a>
 						<StyledButton color={ButtonColor} mode={type}>
 							<h1>{title}</h1>
-							<p>{subtitle}</p>
+							{subtitle && <p>{subtitle}</p>}
 						</StyledButton>
 					</a>
 				</Link>
