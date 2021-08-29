@@ -7,11 +7,11 @@ import { black, blue, white } from '@utils/colors';
 
 export const StyledNavbar = styled.nav`
 	position: relative;
-	padding: 2rem;
+	padding: 1.5rem;
 	background: ${blue};
 	background-image: linear-gradient(to top, ${transparentize(0.73, black)}, transparent);
 	color: ${white};
-	margin-bottom: 4rem;
+	margin-bottom: 2.5rem;
 `;
 
 export const StyledLink = styled.a`
@@ -43,4 +43,8 @@ export const Wrapper = styled.div`
 	display: flex;
 	align-items: center;
 	gap: 1.25rem;
+
+	h1 {
+		font-size: 2rem;
+	}
 `;
