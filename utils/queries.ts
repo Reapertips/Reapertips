@@ -21,6 +21,7 @@ export const getHomePage = gql`
 				username
 				photo {
 					url
+					alt
 				}
 			}
 			buttons {
@@ -47,6 +48,7 @@ export const getDownloadsPage = gql`
 				downloadLink
 				thumbnail {
 					url
+					alt
 				}
 			}
 		}
