@@ -1,12 +1,8 @@
-const path = require('path')
-const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
+const path = require('path');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 module.exports = {
-	stories: [
-		'./**/*.stories.mdx',
-		'../**/*.stories.mdx',
-		'../**/*.stories.@(js|jsx|ts|tsx)'
-	],
+	stories: ['./**/*.stories.mdx', '../**/*.stories.mdx', '../**/*.stories.@(js|jsx|ts|tsx)'],
 	addons: ['@storybook/addon-links', '@storybook/addon-essentials'],
 	webpackFinal: async (config, { configType }) => {
 		// `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'
@@ -20,21 +16,18 @@ module.exports = {
 			test: /\.scss|.sass$/,
 			use: ['style-loader', 'css-loader', 'sass-loader'],
 			include: path.resolve(__dirname, '../')
-		})
+		});
 
 		config.resolve.plugins = [
 			new TsconfigPathsPlugin({
 				configFile: path.resolve(__dirname, '../tsconfig.json')
 			})
-		]
+		];
 
 		// Return the altered config
-		return config
+		return config;
 	},
 	babel: {
-		plugins: [
-			'@babel/plugin-proposal-class-properties',
-			'@babel/plugin-proposal-private-methods'
-		]
+		plugins: ['@babel/plugin-proposal-class-properties', '@babel/plugin-proposal-private-methods']
 	}
-}
+};

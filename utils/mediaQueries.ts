@@ -5,7 +5,7 @@ export const breakpoints = {
 	lg: 1200,
 	xl: 1440,
 	xxl: 1800
-}
+};
 
 export const sizes = {
 	xs: `${breakpoints.xs}px`,
@@ -14,7 +14,7 @@ export const sizes = {
 	lg: `${breakpoints.lg}px`,
 	xl: `${breakpoints.xl}px`,
 	xxl: `${breakpoints.xxl}px`
-}
+};
 
 export const devices = {
 	xs: `(min-width: ${sizes.xs})`,
@@ -23,4 +23,4 @@ export const devices = {
 	lg: `(min-width: ${sizes.lg})`,
 	xl: `(min-width: ${sizes.xl})`,
 	xxl: `(min-width: ${sizes.xxl})`
-}
+};
