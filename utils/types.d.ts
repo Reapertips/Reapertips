@@ -18,7 +18,7 @@ export interface ISEO {
 }
 
 interface IPost {
-	id: string;
+	id?: string;
 	title: string;
 	downloadLink: string;
 	thumbnail: {
