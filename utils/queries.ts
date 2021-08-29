@@ -42,6 +42,21 @@ export const getDownloadsPage = gql`
 		downloads {
 			pageTitle
 			pageDescription
+			seo {
+				brandName
+				metaDescription
+				favicon {
+					url
+				}
+				ogImage {
+					url
+				}
+			}
+			topMessageText
+			topMessageIcon {
+				url
+				alt
+			}
 			posts {
 				id
 				title
@@ -51,6 +66,38 @@ export const getDownloadsPage = gql`
 					alt
 				}
 			}
+		}
+	}
+`;
+
+export const getSubmitPage = gql`
+	query getSubmitPage {
+		submits {
+			pageTitle
+			pageDescription
+			seo {
+				brandName
+				metaDescription
+				favicon {
+					url
+				}
+				ogImage {
+					url
+				}
+			}
+			topMessageText
+			topMessageIcon {
+				url
+				alt
+			}
+			tipLabel
+			tipDescription
+			tipPlaceholder
+			usernameLabel
+			usernamePlaceholder
+			creditsLabel
+			creditsOptions
+			submitButton
 		}
 	}
 `;
