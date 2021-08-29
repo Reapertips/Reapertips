@@ -17,7 +17,7 @@ const Buttons = styled.div`
 
 const Home = ({ pageTitle, pageDescription, seo, profile, buttons }: IHome) => {
 	return (
-		<Layout pageTitle={pageTitle} pageDescription={pageDescription}>
+		<Layout pageTitle={pageTitle} pageDescription={pageDescription} ogImage={seo.ogImage.url}>
 			<Container>
 				<Profile {...profile} />
 				<Buttons>

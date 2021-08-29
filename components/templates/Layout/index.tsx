@@ -5,13 +5,14 @@ import { StyledLayout } from './Layout.styles';
 interface Props {
 	pageTitle: string;
 	pageDescription: string;
+	ogImage: string;
 	children: ReactNode;
 }
 
-const Layout: React.FC<Props> = ({ pageTitle, pageDescription, children }) => {
+const Layout: React.FC<Props> = ({ pageTitle, pageDescription, ogImage, children }) => {
 	return (
 		<StyledLayout>
-			<SEO pageTitle={pageTitle} pageDescription={pageDescription} />
+			<SEO pageTitle={pageTitle} pageDescription={pageDescription} ogImage={ogImage} />
 			{children}
 		</StyledLayout>
 	);
