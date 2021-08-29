@@ -1,4 +1,5 @@
 import Image from 'next/image';
+
 import type { IPost } from '@utils/types';
 import { StyledPost } from './Post.styles';
 
