@@ -8,6 +8,8 @@ export const StyledProfile = styled.div`
 	gap: 1rem;
 	color: ${white};
 	margin: 3rem 0;
+	font-size: 2rem;
+	font-weight: 700;
 
 	img {
 		height: 150px;
