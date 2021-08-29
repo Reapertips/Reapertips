@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import styled from 'styled-components';
 
-import { breakpoints } from '@utils/mediaQueries';
+import { breakpoints, devices } from '@utils/mediaQueries';
 
 interface IContainer {
 	className?: string;
@@ -12,9 +12,13 @@ const StyledContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	width: 50%;
-	max-width: ${breakpoints.lg}px;
+	width: 80%;
+	max-width: ${breakpoints.sm}px;
 	margin: 0 auto;
+
+	@media ${devices.lg} {
+		width: 50%;
+	}
 `;
 
 const Container = ({ className, children }: IContainer) => {
