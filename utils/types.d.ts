@@ -2,6 +2,7 @@ export interface IProfile {
 	username: string;
 	photo: {
 		url: string;
+		alt: string;
 	};
 }
 
@@ -16,22 +17,13 @@ export interface ISEO {
 	};
 }
 
-export interface IButton {
-	id: string;
-	title: string;
-	subtitle?: string;
-	externalLink: boolean;
-	link?: string;
-	color: 'red' | 'blue';
-	type: 'primary' | 'secondary';
-}
-
 interface IPost {
 	id: string;
 	title: string;
 	downloadLink: string;
 	thumbnail: {
 		url: string;
+		alt: string;
 	};
 }
 
