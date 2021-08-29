@@ -5,4 +5,5 @@ export const StyledLayout = styled.div`
 	background-size: 56px, auto;
 	background-repeat: repeat;
 	min-height: 100vh;
+	padding-bottom: 100px;
 `;

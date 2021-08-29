@@ -1,6 +1,7 @@
+import { useState } from 'react';
 import Image from 'next/image';
 
-import { StyledTopMessage } from './TopMessage.styles';
+import { StyledTopMessage, Close, MessageIcon } from './TopMessage.styles';
 
 interface ITopMessage {
 	icon: {
@@ -8,12 +9,21 @@ interface ITopMessage {
 		alt: string;
 	};
 	text: string;
+	closable: boolean;
+	className?: string;
 }
 
-export const TopMessage = ({ icon, text }: ITopMessage) => {
+export const TopMessage = ({ icon, text, closable = false, className }: ITopMessage) => {
+	const [visible, setVisible] = useState<boolean>(true);
+
 	return (
-		<StyledTopMessage>
-			<Image src={icon.url} alt={icon.alt} width={32} height={32} />
+		<StyledTopMessage visible={visible} className={className}>
+			<Close onClick={() => setVisible(false)} closable={closable}>
+				<Image src="/icons/close.svg" alt="White close icon" width={12} height={12} />
+			</Close>
+			<MessageIcon>
+				<Image src={icon.url} alt={icon.alt} width={32} height={32} />
+			</MessageIcon>
 			<p>{text}</p>
 		</StyledTopMessage>
 	);

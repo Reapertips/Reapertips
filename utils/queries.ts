@@ -10,9 +10,6 @@ export const getHomePage = gql`
 			seo {
 				brandName
 				metaDescription
-				favicon {
-					url
-				}
 				ogImage {
 					url
 				}
@@ -31,7 +28,7 @@ export const getHomePage = gql`
 				externalLink
 				link
 				color
-				type
+				mode
 			}
 		}
 	}
@@ -45,9 +42,6 @@ export const getDownloadsPage = gql`
 			seo {
 				brandName
 				metaDescription
-				favicon {
-					url
-				}
 				ogImage {
 					url
 				}
@@ -78,9 +72,6 @@ export const getSubmitPage = gql`
 			seo {
 				brandName
 				metaDescription
-				favicon {
-					url
-				}
 				ogImage {
 					url
 				}

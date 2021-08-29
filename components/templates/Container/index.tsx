@@ -16,7 +16,11 @@ const StyledContainer = styled.div`
 	max-width: ${breakpoints.sm}px;
 	margin: 0 auto;
 
-	@media ${devices.lg} {
+	@media ${devices.sm} {
+		width: 60%;
+	}
+
+	@media ${devices.md} {
 		width: 50%;
 	}
 `;

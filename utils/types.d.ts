@@ -1,3 +1,13 @@
+export interface IButton {
+	id?: string;
+	title: string;
+	subtitle?: string;
+	externalLink?: boolean;
+	link?: string;
+	color: 'red' | 'blue';
+	mode: 'primary' | 'secondary';
+}
+
 export interface IProfile {
 	username: string;
 	photo: {

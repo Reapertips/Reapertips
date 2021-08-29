@@ -1,12 +1,19 @@
+import styled from 'styled-components';
 import { request } from 'graphql-request';
 
-import { Navbar } from '@components/atoms/Navbar';
+import { TopMessage } from '@components/atoms/TopMessage';
+import { FormTextInput } from '@components/atoms/FormTextInput';
+import { FormRadioGroup } from '@components/atoms/FormRadioGroup';
+import { Navbar } from '@components/organisms/Navbar';
 import Layout from '@components/templates/Layout';
 import Container from '@components/templates/Container';
 
 import { cms, getSubmitPage } from '@utils/queries';
 import type { ISubmit } from '@utils/types';
-import { TopMessage } from '@components/atoms/TopMessage';
+
+const StyledTopMessage = styled(TopMessage)`
+	margin-bottom: 2.5rem;
+`;
 
 const Submit = ({
 	pageTitle,
@@ -27,19 +34,41 @@ const Submit = ({
 		<Layout pageTitle={pageTitle} pageDescription={pageDescription} ogImage={seo.ogImage.url}>
 			<Navbar pageTitle={pageTitle} />
 			<Container>
-				<TopMessage icon={topMessageIcon} text={topMessageText} />
+				<StyledTopMessage icon={topMessageIcon} text={topMessageText} closable={true} />
 
-				<form name="contact" netlify netlify-honeypot="bot-field" hidden>
-					<input type="text" name="name" />
-					<input type="email" name="email" />
-					<textarea name="message"></textarea>
+				<form name="tips-suggestions" netlify="true" netlify-honeypot="bot-field" hidden>
+					<FormTextInput
+						name="message"
+						label={{ text: tipLabel, size: 'big' }}
+						description={tipDescription}
+						textarea={{ placeholder: tipPlaceholder }}
+						required
+					/>
+					<FormTextInput
+						name="username"
+						label={{ text: usernameLabel, size: 'default' }}
+						input={{ type: 'text', placeholder: usernamePlaceholder }}
+					/>
+					<FormRadioGroup title={creditsLabel} name="credits" options={creditsOptions} />
+					<FormTextInput name="submit" input={{ type: 'submit', value: submitButton }} required />
 				</form>
 
-				<form name="submissions" method="post">
+				<form name="tips-suggestions" method="post">
 					<input type="hidden" name="form-name" value="contact" />
-					<input type="text" name="name" />
-					<input type="email" name="email" />
-					<textarea name="message"></textarea>
+					<FormTextInput
+						name="message"
+						label={{ text: tipLabel, size: 'big' }}
+						description={tipDescription}
+						textarea={{ placeholder: tipPlaceholder }}
+						required
+					/>
+					<FormTextInput
+						name="username"
+						label={{ text: usernameLabel, size: 'default' }}
+						input={{ type: 'text', placeholder: usernamePlaceholder }}
+					/>
+					<FormRadioGroup title={creditsLabel} name="credits" options={creditsOptions} />
+					<FormTextInput name="submit" input={{ type: 'submit', value: submitButton }} required />
 				</form>
 			</Container>
 		</Layout>

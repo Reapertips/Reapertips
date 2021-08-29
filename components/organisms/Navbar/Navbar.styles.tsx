@@ -4,6 +4,7 @@ import { transparentize } from 'polished';
 import Container from '@components/templates/Container';
 
 import { black, blue, white } from '@utils/colors';
+import { devices } from '@utils/mediaQueries';
 
 export const StyledNavbar = styled.nav`
 	position: relative;
@@ -41,8 +42,14 @@ export const Logo = styled.img`
 
 export const Wrapper = styled.div`
 	display: flex;
+	flex-direction: column;
 	align-items: center;
-	gap: 1.25rem;
+	gap: 0.5rem;
+
+	@media ${devices.xs} {
+		flex-direction: row;
+		gap: 1.25rem;
+	}
 
 	h1 {
 		font-size: 2rem;
