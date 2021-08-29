@@ -1,7 +1,16 @@
 import Link from 'next/link';
 import { StyledButton } from './Button.styles';
 import { button__blue, button__red } from '@utils/colors';
-import { IButton } from '@utils/types';
+
+export interface IButton {
+	id: string;
+	title: string;
+	subtitle?: string;
+	externalLink: boolean;
+	link?: string;
+	color: 'red' | 'blue';
+	type: 'primary' | 'secondary';
+}
 
 export const Button = ({
 	title,
