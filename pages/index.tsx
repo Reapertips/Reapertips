@@ -31,7 +31,7 @@ const Home = ({ pageTitle, pageDescription, seo, profile, buttons }: IHome) => {
 };
 
 export const getStaticProps = async () => {
-	const data: IHome = (await request(cms, getHomePage)).homepages[0];
+	const data: IHome = (await request(cms, getHomePage)).homePages[0];
 
 	return {
 		props: data

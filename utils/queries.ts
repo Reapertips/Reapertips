@@ -4,7 +4,7 @@ export const cms = 'https://api-eu-central-1.graphcms.com/v2/cksvw8od10l0c01yxdf
 
 export const getHomePage = gql`
 	query getHomePage {
-		homepages {
+		homePages {
 			pageTitle
 			pageDescription
 			seo {
@@ -40,7 +40,7 @@ export const getHomePage = gql`
 
 export const getDownloadsPage = gql`
 	query getDownloadsPage {
-		downloads {
+		downloadPages {
 			pageTitle
 			pageDescription
 			seo {
@@ -70,7 +70,7 @@ export const getDownloadsPage = gql`
 
 export const getSubmitPage = gql`
 	query getSubmitPage {
-		submits {
+		submitPages {
 			pageTitle
 			pageDescription
 			seo {

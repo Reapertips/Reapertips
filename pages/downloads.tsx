@@ -41,7 +41,7 @@ const Downloads = ({ pageTitle, pageDescription, seo, topMessageIcon, topMessage
 export default Downloads;
 
 export const getStaticProps = async () => {
-	const data = (await request(cms, getDownloadsPage)).downloads[0];
+	const data = (await request(cms, getDownloadsPage)).downloadPages[0];
 
 	return {
 		props: data

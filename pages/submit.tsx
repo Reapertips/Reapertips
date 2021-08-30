@@ -68,7 +68,7 @@ const Submit = ({
 export default Submit;
 
 export const getStaticProps = async () => {
-	const data = (await request(cms, getSubmitPage)).submits[0];
+	const data = (await request(cms, getSubmitPage)).submitPages[0];
 
 	return {
 		props: data
