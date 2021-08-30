@@ -1,6 +1,7 @@
-import { FormInputGroup, FormDescription, StyledFormInput, FormLabel } from './FormTextInput.styles';
+import { useState, useEffect, Dispatch, SetStateAction } from 'react';
+import { FormInputGroup, FormDescription, StyledFormInput, FormLabel } from './TextInput.styles';
 
-interface IFormInput {
+interface ITextInput {
 	name: string;
 	required?: boolean;
 	disabled?: boolean;
@@ -10,17 +11,19 @@ interface IFormInput {
 	};
 	description?: string;
 	input?: {
+		value?: string;
 		type: string;
 		placeholder?: string;
-		value?: string;
 		disabled?: boolean;
 	};
 	textarea?: {
 		placeholder: string;
+		value?: string;
 	};
+	callback?: Dispatch<SetStateAction<string>>;
 }
 
-export const FormTextInput = ({
+export const TextInput = ({
 	name,
 	required = false,
 	disabled,
@@ -28,8 +31,17 @@ export const FormTextInput = ({
 	description,
 	input,
 	textarea,
+	callback,
 	...props
-}: IFormInput) => {
+}: ITextInput) => {
+	const [value, setValue] = useState<string>('');
+
+	useEffect(() => {
+		if (callback) {
+			callback(value);
+		}
+	}, [callback, value]);
+
 	return (
 		<FormInputGroup>
 			{label && (
@@ -48,6 +60,7 @@ export const FormTextInput = ({
 					required={required}
 					disabled={!!disabled}
 					isTextarea={false}
+					onChange={(e: { target: { value: SetStateAction<string> } }) => setValue(e.target.value)}
 				/>
 			)}
 			{textarea && (
@@ -56,9 +69,11 @@ export const FormTextInput = ({
 					id={name}
 					name={name}
 					placeholder={textarea.placeholder}
+					value={textarea.value}
 					disabled={!!disabled}
 					required={required}
 					isTextarea={true}
+					onChange={(e: { target: { value: SetStateAction<string> } }) => setValue(e.target.value)}
 				/>
 			)}
 		</FormInputGroup>
