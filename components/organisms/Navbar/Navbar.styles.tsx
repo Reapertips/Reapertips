@@ -29,6 +29,11 @@ export const BackArrow = styled.img`
 	transform: translateY(-50%);
 	left: 2rem;
 	width: 2rem;
+	transition: opacity 0.2s;
+
+	&:hover {
+		opacity: 0.6;
+	}
 `;
 
 export const StyledContainer = styled(Container)`
