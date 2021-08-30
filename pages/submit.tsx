@@ -39,9 +39,8 @@ const Submit = ({
 				<form name="tips-suggestions" data-netlify="true" netlify-honeypot="bot-field" hidden>
 					<textarea name="message" />
 					<input type="text" name="username" />
-					{creditsOptions.map((option) => (
-						<input key={option} type="radio" name="credits" id={option} />
-					))}
+					<input type="radio" name="credits" id="Yes, include my username in the design." />
+					<input type="radio" name="credits" id="No, it's okay." />
 				</form>
 
 				<form name="tips-suggestions" method="post">
