@@ -1,6 +1,7 @@
 import { Story, Meta } from '@storybook/react';
 
-import { Button, IButton } from '@atoms/Button';
+import { Button } from '@atoms/Button';
+import { IButton } from '@utils/types';
 
 export default {
 	title: 'Atoms/Button',
@@ -14,5 +15,5 @@ Primary.args = {
 	title: 'Title',
 	subtitle: 'Subtitle',
 	color: 'blue',
-	type: 'primary'
+	mode: 'primary'
 };
