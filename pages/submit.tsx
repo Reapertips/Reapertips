@@ -37,19 +37,11 @@ const Submit = ({
 				<StyledTopMessage icon={topMessageIcon} text={topMessageText} closable={true} />
 
 				<form name="tips-suggestions" data-netlify="true" netlify-honeypot="bot-field" hidden>
-					<FormTextInput
-						name="message"
-						label={{ text: tipLabel, size: 'big' }}
-						description={tipDescription}
-						textarea={{ placeholder: tipPlaceholder }}
-						required
-					/>
-					<FormTextInput
-						name="username"
-						label={{ text: usernameLabel, size: 'default' }}
-						input={{ type: 'text', placeholder: usernamePlaceholder }}
-					/>
-					<FormRadioGroup title={creditsLabel} name="credits" options={creditsOptions} />
+					<textarea name="message" />
+					<input type="text" name="username" />
+					{creditsOptions.map((option) => (
+						<input key={option} type="radio" name="credits" id={option} />
+					))}
 				</form>
 
 				<form name="tips-suggestions" method="post">
