@@ -1,4 +1,6 @@
-import { Title, Label, Option } from './FormRadioGroup.styles';
+import { useState } from 'react';
+
+import { Title, Option } from './FormRadioGroup.styles';
 
 interface IFormRadioGroup {
 	title: string;
@@ -7,13 +9,24 @@ interface IFormRadioGroup {
 }
 
 export const FormRadioGroup = ({ title, name, options }: IFormRadioGroup) => {
+	const [selected, setSelected] = useState<string>(options[0]);
+
 	return (
 		<div>
 			<Title>{title}</Title>
 			{options.map((option) => (
 				<Option key={option}>
-					<input type="radio" id={option} name={name} checked />
-					<Label htmlFor={option}>{option}</Label>
+					<label>
+						<input
+							type="radio"
+							id={option}
+							name={name}
+							value={option}
+							checked={selected === option}
+							onChange={(e) => setSelected(e.target.value)}
+						/>
+						{option}
+					</label>
 				</Option>
 			))}
 		</div>

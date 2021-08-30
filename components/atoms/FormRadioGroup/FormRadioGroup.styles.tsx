@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { transparentize } from 'polished';
 import { white } from '@utils/colors';
 
 export const Title = styled.h1`
@@ -8,12 +9,21 @@ export const Title = styled.h1`
 `;
 
 export const Option = styled.div`
+	color: ${transparentize(0.4, white)};
+	width: fit-content;
+
 	&:not(:last-child) {
 		margin-bottom: 0.5rem;
 	}
-`;
 
-export const Label = styled.label`
-	color: ${white};
-	opacity: 0.6;
+	input,
+	label {
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
+	input {
+		margin-right: 0.5rem;
+	}
 `;
