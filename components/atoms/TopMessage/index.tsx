@@ -9,7 +9,7 @@ interface ITopMessage {
 		alt: string;
 	};
 	text: string;
-	closable: boolean;
+	closable?: boolean;
 	className?: string;
 }
 
