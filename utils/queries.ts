@@ -24,6 +24,10 @@ export const getHomePage = gql`
 			buttons {
 				id
 				title
+				icon {
+					url
+					alt
+				}
 				subtitle
 				externalLink
 				link

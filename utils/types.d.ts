@@ -1,6 +1,10 @@
 export interface IButton {
 	id?: string;
 	title: string;
+	icon?: {
+		url: string;
+		alt: string;
+	};
 	subtitle?: string;
 	externalLink?: boolean;
 	link?: string;

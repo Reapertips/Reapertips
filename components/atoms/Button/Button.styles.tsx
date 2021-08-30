@@ -26,6 +26,11 @@ export const StyledButton = styled.button<Props>`
 		cursor: pointer;
 	}
 
+	div {
+		display: flex;
+		gap: 1rem;
+	}
+
 	h1 {
 		font-size: ${(props) => (props.color === 'red' ? '1.5rem' : '1.25rem')};
 	}
