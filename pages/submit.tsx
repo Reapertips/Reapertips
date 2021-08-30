@@ -36,7 +36,7 @@ const Submit = ({
 			<Container>
 				<StyledTopMessage icon={topMessageIcon} text={topMessageText} closable={true} />
 
-				<form name="tips-suggestions" netlify="true" netlify-honeypot="bot-field" hidden>
+				<form name="tips-suggestions" data-netlify="true" netlify-honeypot="bot-field" hidden>
 					<FormTextInput
 						name="message"
 						label={{ text: tipLabel, size: 'big' }}
@@ -50,11 +50,10 @@ const Submit = ({
 						input={{ type: 'text', placeholder: usernamePlaceholder }}
 					/>
 					<FormRadioGroup title={creditsLabel} name="credits" options={creditsOptions} />
-					<FormTextInput name="submit" input={{ type: 'submit', value: submitButton }} required />
 				</form>
 
 				<form name="tips-suggestions" method="post">
-					<input type="hidden" name="form-name" value="contact" />
+					<input type="hidden" name="form-name" value="tips-suggestions" />
 					<FormTextInput
 						name="message"
 						label={{ text: tipLabel, size: 'big' }}
