@@ -16,7 +16,11 @@ export const Navbar = ({ pageTitle }: INavbar) => {
 
 			<StyledContainer>
 				<Wrapper>
-					<Logo src="/logo/logo-white.svg" alt="Reapertips white logo" />
+					<Link href="/">
+						<a>
+							<Logo src="/logo/logo-white.svg" alt="Reapertips white logo" />
+						</a>
+					</Link>
 					<h1>{pageTitle}</h1>
 				</Wrapper>
 			</StyledContainer>
