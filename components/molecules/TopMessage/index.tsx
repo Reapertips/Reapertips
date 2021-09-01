@@ -14,7 +14,7 @@ interface ITopMessage {
 }
 
 export const TopMessage = ({ icon, text, closable = false, className }: ITopMessage) => {
-	const [visible, setVisible] = useState<boolean>(false);
+	const [visible, setVisible] = useState<boolean>(closable === undefined || !closable ? true : false);
 
 	useEffect(() => {
 		const saved = sessionStorage.getItem('topMessageVisible');
