@@ -52,10 +52,14 @@ export const getDownloadsPage = gql`
 					url
 				}
 			}
-			topMessageText
-			topMessageIcon {
-				url
-				alt
+			popup {
+				text {
+					html
+				}
+				icon {
+					url
+					alt
+				}
 			}
 			posts {
 				id
@@ -82,10 +86,14 @@ export const getSubmitPage = gql`
 					url
 				}
 			}
-			topMessageText
-			topMessageIcon {
-				url
-				alt
+			popup {
+				text {
+					html
+				}
+				icon {
+					url
+					alt
+				}
 			}
 			tipLabel
 			tipDescription
