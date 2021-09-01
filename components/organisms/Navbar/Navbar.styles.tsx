@@ -8,7 +8,7 @@ import { devices } from '@utils/mediaQueries';
 
 export const StyledNavbar = styled.nav`
 	position: relative;
-	padding: 1.5rem;
+	padding: 1.5rem 1.25rem;
 	background: ${blue};
 	background-image: linear-gradient(to top, ${transparentize(0.73, black)}, transparent);
 	color: ${white};
@@ -41,8 +41,8 @@ export const StyledContainer = styled(Container)`
 	justify-content: center;
 `;
 
-export const Logo = styled.img`
-	width: 3.5rem;
+export const Logo = styled.a`
+	display: flex;
 `;
 
 export const Wrapper = styled.div`
