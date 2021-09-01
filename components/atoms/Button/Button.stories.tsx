@@ -1,7 +1,6 @@
 import { Story, Meta } from '@storybook/react';
 
-import { Button } from '@atoms/Button';
-import { IButton } from '@utils/types';
+import { Button, IButton } from '@atoms/Button';
 
 export default {
 	title: 'Atoms/Button',
