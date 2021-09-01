@@ -1,26 +1,24 @@
-import styled from 'styled-components';
-
-import { TopMessage } from '@components/molecules/TopMessage';
+import { Popup, IPopup } from '@components/molecules/Popup';
 import { Navbar } from '@components/organisms/Navbar';
-import { Form } from '@components/organisms/Form';
+import { Form, IForm } from '@components/organisms/Form';
 import Layout from '@components/templates/Layout';
 import Container from '@components/templates/Container';
 
 import { fetch, getSubmitPage } from '@utils/queries';
-import type { ISubmit } from '@utils/types';
+import type { IPage } from '@utils/types';
 
-const StyledTopMessage = styled(TopMessage)`
-	margin-bottom: 2.5rem;
-`;
+export interface ISubmitPage extends IPage, IForm {
+	popup: IPopup;
+}
 
-const Submit = (props: ISubmit) => {
-	const { pageTitle, pageDescription, seo, topMessageIcon, topMessageText } = props;
+const Submit = (props: ISubmitPage) => {
+	const { pageTitle, popup } = props;
 
 	return (
-		<Layout pageTitle={pageTitle} pageDescription={pageDescription} ogImage={seo.ogImage.url}>
+		<Layout {...props}>
 			<Navbar pageTitle={pageTitle} />
 			<Container>
-				<StyledTopMessage icon={topMessageIcon} text={topMessageText} closable={true} />
+				<Popup icon={popup.icon} text={popup.text} closable={true} />
 				<Form {...props} />
 			</Container>
 		</Layout>

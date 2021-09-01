@@ -1,36 +1,27 @@
-import styled from 'styled-components';
-
-import { Post } from '@components/atoms/Post';
+import { Popup, IPopup } from '@components/molecules/Popup';
+import { IPost } from '@components/atoms/Post';
 import { Navbar } from '@components/organisms/Navbar';
-import { TopMessage } from '@components/molecules/TopMessage';
+import { Gallery } from '@components/organisms/Gallery';
 import Layout from '@components/templates/Layout';
 import Container from '@components/templates/Container';
 
 import { fetch, getDownloadsPage } from '@utils/queries';
-import type { IDownloads } from '@utils/types';
+import type { IPage } from '@utils/types';
 
-const Gallery = styled.div`
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-	gap: 1rem;
-	width: 100%;
-`;
+export interface IDownloadsPage extends IPage {
+	popup: IPopup;
+	posts: IPost[];
+}
 
-const StyledPost = styled(Post)`
-	aspect-ratio: 1/1;
-`;
+const Downloads = (props: IDownloadsPage) => {
+	const { pageTitle, popup, posts } = props;
 
-const Downloads = ({ pageTitle, pageDescription, seo, topMessageIcon, topMessageText, posts }: IDownloads) => {
 	return (
-		<Layout pageTitle={pageTitle} pageDescription={pageDescription} ogImage={seo.ogImage.url}>
+		<Layout {...props}>
 			<Navbar pageTitle={pageTitle} />
 			<Container>
-				<TopMessage icon={topMessageIcon} text={topMessageText} />
-				<Gallery>
-					{posts.map((post) => (
-						<StyledPost key={post.id} {...post} />
-					))}
-				</Gallery>
+				<Popup icon={popup.icon} text={popup.text} />
+				<Gallery posts={posts} />
 			</Container>
 		</Layout>
 	);

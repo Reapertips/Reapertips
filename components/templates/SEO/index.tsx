@@ -1,13 +1,9 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
 
-interface Props {
-	pageTitle: string;
-	pageDescription: string;
-	ogImage: string;
-}
+import { IPage } from '@utils/types';
 
-const SEO: React.FC<Props> = ({ pageTitle, pageDescription, ogImage }) => {
+const SEO = ({ pageTitle, pageDescription, seo }: IPage) => {
 	const [protocol, setProtocol] = useState<string>('');
 	const [hostname, setHostname] = useState<string>('');
 	const [port, setPort] = useState<string>('');
@@ -18,7 +14,8 @@ const SEO: React.FC<Props> = ({ pageTitle, pageDescription, ogImage }) => {
 		setPort(window.location.port);
 	}, []);
 
-	const brandName = 'Reapertips';
+	const { brandName, ogImage } = seo;
+
 	const title = pageTitle ? `${pageTitle} | ${brandName}` : brandName;
 	const finalPort = port && `: ${port}`;
 
@@ -32,7 +29,7 @@ const SEO: React.FC<Props> = ({ pageTitle, pageDescription, ogImage }) => {
 			<meta property="og:description" content={pageDescription} />
 			<meta property="og:type" content="website" />
 			<meta property="og:url" content={`${protocol}${hostname}${finalPort}`} />
-			<meta property="og:image" content={ogImage} />
+			<meta property="og:image" content={ogImage.url} />
 			<meta name="twitter:card" content="summary_large_image" />
 			<meta name="twitter:title" content={pageTitle} />
 			<meta name="twitter:description" content={pageDescription} />

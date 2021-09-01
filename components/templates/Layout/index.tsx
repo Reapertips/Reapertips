@@ -1,18 +1,16 @@
 import { ReactNode } from 'react';
 import SEO from '@templates/SEO';
 import { StyledLayout } from './Layout.styles';
+import { IPage } from '@utils/types';
 
-interface Props {
-	pageTitle: string;
-	pageDescription: string;
-	ogImage: string;
+interface ILayout extends IPage {
 	children: ReactNode;
 }
 
-const Layout: React.FC<Props> = ({ pageTitle, pageDescription, ogImage, children }) => {
+const Layout = ({ pageTitle, pageDescription, seo, children }: ILayout) => {
 	return (
 		<StyledLayout>
-			<SEO pageTitle={pageTitle} pageDescription={pageDescription} ogImage={ogImage} />
+			<SEO pageTitle={pageTitle} pageDescription={pageDescription} seo={seo} />
 			{children}
 		</StyledLayout>
 	);
