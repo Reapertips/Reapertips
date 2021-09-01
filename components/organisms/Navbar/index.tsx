@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { StyledNavbar, StyledContainer, StyledLink, Logo, Wrapper, BackArrow } from './Navbar.styles';
 
@@ -16,10 +17,10 @@ export const Navbar = ({ pageTitle }: INavbar) => {
 
 			<StyledContainer>
 				<Wrapper>
-					<Link href="/">
-						<a>
-							<Logo src="/logo/logo-white.svg" alt="Reapertips white logo" />
-						</a>
+					<Link href="/" passHref>
+						<Logo>
+							<Image src="/logo/logo-white.svg" alt="Reapertips white logo" width={56} height={64} />
+						</Logo>
 					</Link>
 					<h1>{pageTitle}</h1>
 				</Wrapper>
