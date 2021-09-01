@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 import { StyledTopMessage, Close, MessageIcon } from './TopMessage.styles';
@@ -14,7 +14,18 @@ interface ITopMessage {
 }
 
 export const TopMessage = ({ icon, text, closable = false, className }: ITopMessage) => {
-	const [visible, setVisible] = useState<boolean>(true);
+	const [visible, setVisible] = useState<boolean>(false);
+
+	useEffect(() => {
+		const saved = sessionStorage.getItem('topMessageVisible');
+
+		if (saved === null) {
+			setVisible(true);
+			sessionStorage.setItem('topMessageVisible', JSON.stringify(true));
+		} else {
+			sessionStorage.setItem('topMessageVisible', JSON.stringify(visible));
+		}
+	}, [visible]);
 
 	return (
 		<StyledTopMessage visible={visible} className={className}>
