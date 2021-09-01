@@ -1,6 +1,11 @@
 import Image from 'next/image';
-import { IProfile } from '@utils/types';
+import { IImage } from '@utils/types';
 import { StyledProfile } from './Profile.styles';
+
+export interface IProfile {
+	username: string;
+	photo: IImage;
+}
 
 export const Profile = ({ username, photo }: IProfile) => {
 	return (

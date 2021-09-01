@@ -4,8 +4,18 @@ import { TextInput } from '@FormElements/TextInput';
 import { SubmitButton } from '@FormElements/SubmitButton';
 import { RadioGroup } from '@FormElements/RadioGroup';
 
-import type { ISubmit } from '@utils/types';
 import { SuccessToast, ErrorToast } from '@lib/toast';
+
+export interface IForm {
+	tipLabel: string;
+	tipDescription: string;
+	tipPlaceholder: string;
+	usernameLabel: string;
+	usernamePlaceholder: string;
+	creditsLabel: string;
+	creditsOptions: string[];
+	submitButton: string;
+}
 
 export const Form = ({
 	tipLabel,
@@ -16,7 +26,7 @@ export const Form = ({
 	creditsLabel,
 	creditsOptions,
 	submitButton
-}: ISubmit) => {
+}: IForm) => {
 	const [message, setMessage] = useState<string>('');
 	const [username, setUsername] = useState<string>('');
 	const [credits, setCredits] = useState<string>(creditsOptions[0]);

@@ -1,8 +1,19 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { IButton } from '@utils/types';
+import { IImage } from '@utils/types';
 import { StyledButton } from './Button.styles';
+
+export interface IButton {
+	id?: string;
+	title: string;
+	icon?: IImage;
+	subtitle?: string;
+	externalLink?: boolean;
+	link?: string;
+	color: 'red' | 'blue';
+	mode: 'primary' | 'secondary';
+}
 
 export const Button = ({
 	title,
