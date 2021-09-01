@@ -2,13 +2,9 @@ import styled from 'styled-components';
 import { blue, white } from '@utils/colors';
 import { devices } from '@utils/mediaQueries';
 
-interface IStyledTopMessage {
-	visible: boolean;
-}
-
-export const StyledTopMessage = styled.div<IStyledTopMessage>`
+export const StyledPopup = styled.div`
 	position: relative;
-	display: ${(props) => (props.visible ? 'flex' : 'none')};
+	display: flex;
 	justify-content: center;
 	align-items: center;
 	gap: 0.75rem;
@@ -16,8 +12,8 @@ export const StyledTopMessage = styled.div<IStyledTopMessage>`
 	color: ${white};
 	width: 100%;
 	border-radius: 12px;
-	padding: 0.75rem 1.5rem;
-	margin-bottom: 1.5rem;
+	padding: 0.75rem 1.625rem;
+	margin-bottom: 2.5rem;
 	font-size: 0.875rem;
 `;
 
@@ -40,7 +36,7 @@ export const Close = styled.div<IClose>`
 export const MessageIcon = styled.div`
 	display: none;
 	position: relative;
-	height: 100%;
+	height: 2.5rem;
 
 	@media ${devices.sm} {
 		display: flex;
