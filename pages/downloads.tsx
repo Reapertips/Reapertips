@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { Post } from '@components/atoms/Post';
 import { Navbar } from '@components/organisms/Navbar';
-import { TopMessage } from '@components/atoms/TopMessage';
+import { TopMessage } from '@components/molecules/TopMessage';
 import Layout from '@components/templates/Layout';
 import Container from '@components/templates/Container';
 

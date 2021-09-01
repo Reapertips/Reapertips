@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { TopMessage } from '@components/atoms/TopMessage';
+import { TopMessage } from '@components/molecules/TopMessage';
 import { Navbar } from '@components/organisms/Navbar';
 import { Form } from '@components/organisms/Form';
 import Layout from '@components/templates/Layout';

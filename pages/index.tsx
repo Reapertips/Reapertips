@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { Button } from '@atoms/Button';
-import { Profile } from '@atoms/Profile';
+import { Profile } from '@components/molecules/Profile';
 import Container from '@components/templates/Container';
 import Layout from '@components/templates/Layout';
 
