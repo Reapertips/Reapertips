@@ -79,15 +79,8 @@ const Submit = ({
 			<Container>
 				<StyledTopMessage icon={topMessageIcon} text={topMessageText} closable={true} />
 
-				<form name="tips-suggestions" data-netlify="true" netlify-honeypot="bot-field" hidden>
-					<textarea name="message" />
-					<input type="text" name="username" />
-					<input type="radio" name="credits" id="Yes, include my username in the design." />
-					<input type="radio" name="credits" id="No, it's okay." />
-				</form>
-
-				<form name="tips-suggestions" method="post" onSubmit={handleSubmit}>
-					<input type="hidden" name="form-name" value="tips-suggestions" />
+				<form name="reapertips-suggestions" method="POST" data-netlify="true" onSubmit={handleSubmit}>
+					<input type="hidden" name="form-name" value="reapertips-suggestions" />
 					<TextInput
 						name="message"
 						label={{ text: tipLabel, size: 'big' }}
