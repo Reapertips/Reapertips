@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { request } from 'graphql-request';
 
 import { Post } from '@components/atoms/Post';
 import { Navbar } from '@components/organisms/Navbar';
@@ -7,7 +6,7 @@ import { TopMessage } from '@components/atoms/TopMessage';
 import Layout from '@components/templates/Layout';
 import Container from '@components/templates/Container';
 
-import { cms, getDownloadsPage } from '@utils/queries';
+import { fetch, getDownloadsPage } from '@utils/queries';
 import type { IDownloads } from '@utils/types';
 
 const Gallery = styled.div`
@@ -27,7 +26,6 @@ const Downloads = ({ pageTitle, pageDescription, seo, topMessageIcon, topMessage
 			<Navbar pageTitle={pageTitle} />
 			<Container>
 				<TopMessage icon={topMessageIcon} text={topMessageText} />
-
 				<Gallery>
 					{posts.map((post) => (
 						<StyledPost key={post.id} {...post} />
@@ -41,7 +39,7 @@ const Downloads = ({ pageTitle, pageDescription, seo, topMessageIcon, topMessage
 export default Downloads;
 
 export const getStaticProps = async () => {
-	const data = (await request(cms, getDownloadsPage)).downloadPages[0];
+	const data = (await fetch(getDownloadsPage)).downloadPages[0];
 
 	return {
 		props: data

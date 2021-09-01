@@ -1,6 +1,8 @@
-import { gql } from 'graphql-request';
+import { gql, request } from 'graphql-request';
 
-export const cms = 'https://api-eu-central-1.graphcms.com/v2/cksvw8od10l0c01yxdff75601/master';
+export const fetch = async (query: string) => {
+	return request('https://api-eu-central-1.graphcms.com/v2/cksvw8od10l0c01yxdff75601/master', query);
+};
 
 export const getHomePage = gql`
 	query getHomePage {

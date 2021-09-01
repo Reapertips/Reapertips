@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { request } from 'graphql-request';
 
 import { Button } from '@atoms/Button';
 import { Profile } from '@atoms/Profile';
@@ -7,7 +6,7 @@ import Container from '@components/templates/Container';
 import Layout from '@components/templates/Layout';
 
 import type { IHome } from '@utils/types';
-import { cms, getHomePage } from '@utils/queries';
+import { fetch, getHomePage } from '@utils/queries';
 
 const Buttons = styled.div`
 	display: flex;
@@ -31,7 +30,7 @@ const Home = ({ pageTitle, pageDescription, seo, profile, buttons }: IHome) => {
 };
 
 export const getStaticProps = async () => {
-	const data: IHome = (await request(cms, getHomePage)).homePages[0];
+	const data: IHome = (await fetch(getHomePage)).homePages[0];
 
 	return {
 		props: data
