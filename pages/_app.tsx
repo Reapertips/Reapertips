@@ -6,7 +6,7 @@ import { ToastContainer } from 'react-toastify';
 import { toastConfig } from '@lib/toast';
 import 'react-toastify/dist/ReactToastify.css';
 
-import '../styles/globals.scss';
+import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
 	return (
