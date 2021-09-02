@@ -1,12 +1,8 @@
 import styled from 'styled-components';
 import { white, button__blue, button__red } from '@utils/colors';
+import { IButtonCore } from './CoreButton';
 
-interface Props {
-	color: 'red' | 'blue';
-	mode: 'primary' | 'secondary';
-}
-
-export const StyledButton = styled.button<Props>`
+export const StyledButton = styled.button<Partial<IButtonCore>>`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -28,6 +24,7 @@ export const StyledButton = styled.button<Props>`
 
 	div {
 		display: flex;
+		align-items: center;
 		gap: 1rem;
 	}
 
