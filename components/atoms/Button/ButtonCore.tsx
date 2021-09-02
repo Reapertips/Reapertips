@@ -11,9 +11,9 @@ export interface IButtonCore {
 	mode: 'primary' | 'secondary';
 }
 
-export const ButtonCore = ({ title, icon, subtitle, color, mode, ...props }: IButtonCore) => {
+export const ButtonCore = ({ title, icon, subtitle, color, mode }: IButtonCore) => {
 	return (
-		<StyledButton color={color} mode={mode} {...props}>
+		<StyledButton color={color} mode={mode}>
 			<div>
 				<h1>{title}</h1>
 				{icon && <Image src={icon?.url} alt={icon?.alt} width={40} height={40} />}
