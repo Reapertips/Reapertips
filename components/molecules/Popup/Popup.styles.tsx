@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+
+import { IPopup } from '.';
+
 import { blue, white } from '@utils/colors';
 import { devices } from '@utils/mediaQueries';
 
@@ -17,11 +20,7 @@ export const StyledPopup = styled.div`
 	font-size: 0.875rem;
 `;
 
-interface IClose {
-	closable: boolean;
-}
-
-export const Close = styled.div<IClose>`
+export const Close = styled.div<Partial<IPopup>>`
 	position: absolute;
 	display: ${(props) => (props.closable ? 'flex' : 'none')};
 	top: 8px;
