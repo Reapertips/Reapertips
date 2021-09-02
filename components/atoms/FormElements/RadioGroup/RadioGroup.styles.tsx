@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { transparentize } from 'polished';
+
 import { white } from '@utils/colors';
 
 export const Title = styled.h1`
