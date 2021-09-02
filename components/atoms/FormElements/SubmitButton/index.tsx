@@ -1,6 +1,6 @@
 import { StyledSubmitButton } from './SubmitButton.styles';
 
-interface ISubmitButton {
+export interface ISubmitButton {
 	disabled?: boolean;
 	value: string;
 	callback?: () => void;
