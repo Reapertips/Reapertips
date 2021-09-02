@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
 import { white, button__blue } from '@utils/colors';
+import { sizes } from '@utils/mediaQueries';
 
 export const StyledSubmitButton = styled.input`
-	min-width: 560px;
+	min-width: ${sizes.xs};
 	max-width: 100%;
 	padding: 1rem;
 	border: 0;

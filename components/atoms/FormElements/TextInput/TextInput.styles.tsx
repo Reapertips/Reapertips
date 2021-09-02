@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
-import { white } from '@utils/colors';
 import { ITextInput } from '.';
+
+import { white } from '@utils/colors';
+import { sizes } from '@utils/mediaQueries';
 
 export const FormInputGroup = styled.div`
 	display: flex;
@@ -33,7 +35,7 @@ export const FormDescription = styled.p`
 `;
 
 export const StyledFormInput = styled.input<Partial<ITextInput>>`
-	width: 560px;
+	width: ${sizes.xs};
 	max-width: 100%;
 	min-height: ${(props) => (props.textarea !== undefined ? '160px' : 'inherit')};
 	max-height: 400px;

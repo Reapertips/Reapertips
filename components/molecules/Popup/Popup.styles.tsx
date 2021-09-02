@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { IPopup } from '.';
 
 import { blue, white } from '@utils/colors';
-import { devices } from '@utils/mediaQueries';
+import { devices, sizes } from '@utils/mediaQueries';
 
 export const StyledPopup = styled.div`
 	position: relative;
@@ -13,7 +13,7 @@ export const StyledPopup = styled.div`
 	gap: 0.75rem;
 	background: ${blue};
 	color: ${white};
-	width: 560px;
+	width: ${sizes.xs};
 	max-width: 100%;
 	border-radius: 12px;
 	padding: 0.75rem 1.625rem;
