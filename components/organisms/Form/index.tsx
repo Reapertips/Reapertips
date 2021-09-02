@@ -5,6 +5,7 @@ import { SubmitButton } from '@FormElements/SubmitButton';
 import { RadioGroup } from '@FormElements/RadioGroup';
 
 import { SuccessToast, ErrorToast } from '@lib/toast';
+import { StyledSubmitButton } from './Form.styles';
 
 export interface IForm {
 	tipLabel: string;
@@ -91,7 +92,7 @@ export const Form = ({
 				selected={credits}
 				callback={setCredits}
 			/>
-			<SubmitButton value={submitText} />
+			<StyledSubmitButton value={submitText} />
 		</form>
 	);
 };
