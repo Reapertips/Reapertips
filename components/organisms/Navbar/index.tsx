@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { StyledNavbar, StyledContainer, StyledLink, Logo, Wrapper, BackArrow } from './Navbar.styles';
 
-interface INavbar {
+export interface INavbar {
 	pageTitle: string;
 }
 
