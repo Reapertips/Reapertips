@@ -1,4 +1,4 @@
-import { ButtonCore } from './CoreButton';
+import { ButtonCore } from './ButtonCore';
 import { ILinkButton, LinkButton } from './LinkButton';
 
 export interface IButton extends ILinkButton {

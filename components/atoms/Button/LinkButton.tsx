@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { ButtonCore, IButtonCore } from './CoreButton';
+import { ButtonCore, IButtonCore } from './ButtonCore';
 
 export interface ILinkButton extends IButtonCore {
 	externalLink?: boolean;

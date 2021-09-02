@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 import { IImage } from '@utils/types';
-import { StyledButton } from './Button.styles';
+import { StyledButton } from './ButtonCore.styles';
 
 export interface IButtonCore {
 	title: string;

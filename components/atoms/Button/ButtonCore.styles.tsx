@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { white, button__blue, button__red } from '@utils/colors';
-import { IButtonCore } from './CoreButton';
+import { IButtonCore } from './ButtonCore';
 
 export const StyledButton = styled.button<Partial<IButtonCore>>`
 	display: flex;
