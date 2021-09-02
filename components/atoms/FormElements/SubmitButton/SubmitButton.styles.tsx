@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import { white, button__blue } from '@utils/colors';
 
 export const StyledSubmitButton = styled.input`
-	width: 100%;
+	min-width: 560px;
+	max-width: 100%;
 	margin-top: 5rem;
 	padding: 1rem;
 	border: 0;
@@ -15,5 +16,10 @@ export const StyledSubmitButton = styled.input`
 
 	&:hover {
 		cursor: pointer;
+	}
+
+	&:disabled {
+		cursor: not-allowed;
+		background: grey;
 	}
 `;
