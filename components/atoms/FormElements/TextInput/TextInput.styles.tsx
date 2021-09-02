@@ -33,7 +33,8 @@ export const FormDescription = styled.p`
 `;
 
 export const StyledFormInput = styled.input<Partial<ITextInput>>`
-	width: 100%;
+	width: 560px;
+	max-width: 100%;
 	min-height: ${(props) => (props.textarea !== undefined ? '160px' : 'inherit')};
 	max-height: 400px;
 	border-radius: 0.5rem;
