@@ -14,7 +14,6 @@ export interface ITextInput {
 		value?: string;
 		type: string;
 		placeholder?: string;
-		disabled?: boolean;
 	};
 	textarea?: {
 		placeholder: string;
