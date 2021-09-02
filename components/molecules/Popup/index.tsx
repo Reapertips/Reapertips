@@ -35,7 +35,7 @@ export const Popup = ({ icon, text, closable = false, className }: IPopup) => {
 			<MessageIcon>
 				<Image src={icon.url} alt={icon.alt} width={32} height={32} />
 			</MessageIcon>
-			<p dangerouslySetInnerHTML={{ __html: text.html }} />
+			<div dangerouslySetInnerHTML={{ __html: text.html }} />
 		</StyledPopup>
 	) : null;
 };
