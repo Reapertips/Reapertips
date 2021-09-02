@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-import { transparentize } from 'polished';
-import { white, button__blue } from '@utils/colors';
+
+import { white } from '@utils/colors';
+import { ITextInput } from '.';
 
 export const FormInputGroup = styled.div`
 	display: flex;
@@ -11,13 +12,9 @@ export const FormInputGroup = styled.div`
 	}
 `;
 
-interface IFormLabel {
-	size: 'default' | 'big';
-}
-
-export const FormLabel = styled.label<IFormLabel>`
+export const FormLabel = styled.label<Partial<ITextInput>>`
 	color: ${white};
-	font-size: ${(props) => (props.size === 'default' ? '1rem' : '1.5rem')};
+	font-size: ${(props) => (props.label?.size === 'default' ? '1rem' : '1.5rem')};
 	font-weight: 700;
 	margin-bottom: 0.5rem;
 
@@ -35,13 +32,9 @@ export const FormDescription = styled.p`
 	margin-bottom: 0.75rem;
 `;
 
-interface IStyledFormInput {
-	isTextarea: boolean;
-}
-
-export const StyledFormInput = styled.input<IStyledFormInput>`
+export const StyledFormInput = styled.input<Partial<ITextInput>>`
 	width: 100%;
-	min-height: ${(props) => (props.isTextarea ? '160px' : 'inherit')};
+	min-height: ${(props) => (props.textarea !== undefined ? '160px' : 'inherit')};
 	max-height: 400px;
 	border-radius: 0.5rem;
 	border: 0;
@@ -62,13 +55,5 @@ export const StyledFormInput = styled.input<IStyledFormInput>`
 	&::placeholder {
 		color: ${white};
 		opacity: 0.4;
-	}
-
-	&[type='submit'] {
-		background: ${button__blue};
-		color: ${white};
-		font-size: 1rem;
-		font-weight: 600;
-		margin-top: 5rem;
 	}
 `;

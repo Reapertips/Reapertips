@@ -1,7 +1,7 @@
 import { useState, useEffect, Dispatch, SetStateAction } from 'react';
 import { FormInputGroup, FormDescription, StyledFormInput, FormLabel } from './TextInput.styles';
 
-interface ITextInput {
+export interface ITextInput {
 	name: string;
 	required?: boolean;
 	disabled?: boolean;
@@ -31,8 +31,7 @@ export const TextInput = ({
 	description,
 	input,
 	textarea,
-	callback,
-	...props
+	callback
 }: ITextInput) => {
 	const [value, setValue] = useState<string>('');
 
@@ -45,7 +44,7 @@ export const TextInput = ({
 	return (
 		<FormInputGroup>
 			{label && (
-				<FormLabel size={label.size} htmlFor={name}>
+				<FormLabel label={label} htmlFor={name}>
 					{label.text} {!required && <span>(optional)</span>}
 				</FormLabel>
 			)}
@@ -59,7 +58,7 @@ export const TextInput = ({
 					value={input.value}
 					required={required}
 					disabled={!!disabled}
-					isTextarea={false}
+					textarea={textarea}
 					onChange={(e: { target: { value: SetStateAction<string> } }) => setValue(e.target.value)}
 				/>
 			)}
@@ -72,7 +71,7 @@ export const TextInput = ({
 					value={textarea.value}
 					disabled={!!disabled}
 					required={required}
-					isTextarea={true}
+					textarea={textarea}
 					onChange={(e: { target: { value: SetStateAction<string> } }) => setValue(e.target.value)}
 				/>
 			)}
