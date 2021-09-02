@@ -2,7 +2,7 @@ import { useEffect, Dispatch, SetStateAction } from 'react';
 
 import { Title, Option } from './RadioGroup.styles';
 
-interface IFormRadioGroup {
+export interface IRadioGroup {
 	title: string;
 	name: string;
 	options: string[];
@@ -10,7 +10,7 @@ interface IFormRadioGroup {
 	callback?: Dispatch<SetStateAction<string>>;
 }
 
-export const RadioGroup = ({ title, name, options, selected, callback }: IFormRadioGroup) => {
+export const RadioGroup = ({ title, name, options, selected, callback }: IRadioGroup) => {
 	useEffect(() => {
 		if (callback) {
 			callback(selected);
