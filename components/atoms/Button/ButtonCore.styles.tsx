@@ -1,6 +1,9 @@
 import styled from 'styled-components';
+
 import { white, button__blue, button__red } from '@utils/colors';
 import { IButtonCore } from './ButtonCore';
+
+const getButtonColor = (color: 'red' | 'blue') => (color === 'blue' ? button__blue : button__red);
 
 export const StyledButton = styled.button<Partial<IButtonCore>>`
 	display: flex;
@@ -12,9 +15,11 @@ export const StyledButton = styled.button<Partial<IButtonCore>>`
 	background-color: ${(props) => (props.color === 'blue' ? button__blue : button__red)};
 	background: ${(props) => props.mode === 'secondary' && 'none'};
 	border: 0;
+	box-shadow: ${(props) =>
+		props.mode === 'primary' ? 'none' : props.color && `inset 0 0 0 2px ${getButtonColor(props.color)}`};
 	width: 400px;
 	max-width: 100%;
-	color: ${white};
+	color: ${(props) => (props.mode === 'primary' ? white : props.color && getButtonColor(props.color))};
 	transition: transform 0.2s;
 
 	&:hover {
