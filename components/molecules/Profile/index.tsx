@@ -12,7 +12,7 @@ export const Profile = ({ username, photo }: IProfile) => {
 		<StyledProfile>
 			<Image src={photo.url} alt={photo.alt} width={150} height={150} priority={true} />
 			<a href={`https://instagram.com/${username}`} target="_blank" rel="noopener noreferrer">
-				@{username}
+				@{username.replace(/@/g, '')}
 			</a>
 		</StyledProfile>
 	);
