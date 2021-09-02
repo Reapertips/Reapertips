@@ -19,7 +19,7 @@ export const LinkButton = (props: ILinkButton) => {
 
 	if (link !== undefined && !externalLink) {
 		return (
-			<Link href={getPageLink(link)}>
+			<Link href={`/${getPageLink(link)}`}>
 				<a>
 					<ButtonCore {...props} />
 				</a>
