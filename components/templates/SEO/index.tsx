@@ -14,7 +14,7 @@ const SEO = ({ pageTitle, pageDescription, seo }: IPage) => {
 		setPort(window.location.port);
 	}, []);
 
-	const { brandName, ogImage } = seo;
+	const { brandName, ogImage, metaDescription } = seo;
 
 	const title = pageTitle ? `${pageTitle} | ${brandName}` : brandName;
 	const finalPort = port && `: ${port}`;
@@ -24,7 +24,10 @@ const SEO = ({ pageTitle, pageDescription, seo }: IPage) => {
 			<meta httpEquiv="x-ua-compatible" content="ie=edge" />
 			<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 			<title>{title}</title>
-			<meta name="description" content={pageDescription} />
+			<meta
+				name="description"
+				content={pageDescription === null || pageDescription === '' ? metaDescription : pageDescription}
+			/>
 			<meta property="og:title" content={pageTitle} />
 			<meta property="og:description" content={pageDescription} />
 			<meta property="og:type" content="website" />
