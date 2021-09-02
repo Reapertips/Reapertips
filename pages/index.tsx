@@ -1,5 +1,5 @@
 import { IButton } from '@components/atoms/Button';
-import { ButtonsGroup } from '@components/molecules/ButtonsGroup';
+import { ButtonGroup } from '@components/molecules/ButtonGroup';
 import { IProfile, Profile } from '@components/molecules/Profile';
 import Container from '@components/templates/Container';
 import Layout from '@components/templates/Layout';
@@ -19,7 +19,7 @@ const Home = (props: IHomePage) => {
 		<Layout {...props}>
 			<Container>
 				<Profile {...profile} />
-				<ButtonsGroup buttons={buttons} />
+				<ButtonGroup buttons={buttons} />
 			</Container>
 		</Layout>
 	);
