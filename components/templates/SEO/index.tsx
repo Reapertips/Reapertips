@@ -28,13 +28,13 @@ const SEO = ({ pageTitle, pageDescription, seo }: IPage) => {
 				name="description"
 				content={pageDescription === null || pageDescription === '' ? metaDescription : pageDescription}
 			/>
-			<meta property="og:title" content={pageTitle} />
+			<meta property="og:title" content={title} />
 			<meta property="og:description" content={pageDescription} />
 			<meta property="og:type" content="website" />
 			<meta property="og:url" content={`${protocol}${hostname}${finalPort}`} />
 			<meta property="og:image" content={ogImage.url} />
 			<meta name="twitter:card" content="summary_large_image" />
-			<meta name="twitter:title" content={pageTitle} />
+			<meta name="twitter:title" content={title} />
 			<meta name="twitter:description" content={pageDescription} />
 			<link rel="apple-touch-icon" sizes="180x180" href="/favicon/package/apple-touch-icon.png" />
 			<link rel="icon" type="image/png" sizes="32x32" href="/favicon/package/favicon-32x32.png" />
