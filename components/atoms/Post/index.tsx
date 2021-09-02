@@ -8,11 +8,12 @@ export interface IPost {
 	title: string;
 	downloadLink: string;
 	thumbnail: IImage;
+	className?: string;
 }
 
-export const Post = ({ title, thumbnail, downloadLink }: IPost) => {
+export const Post = ({ title, thumbnail, downloadLink, className }: IPost) => {
 	return (
-		<StyledPost href={downloadLink}>
+		<StyledPost href={downloadLink} className={className}>
 			<Image src={thumbnail.url} alt={title} layout="fill" objectFit="cover" />
 		</StyledPost>
 	);

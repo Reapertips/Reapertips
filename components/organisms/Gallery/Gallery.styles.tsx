@@ -10,5 +10,5 @@ export const StyledGallery = styled.div`
 `;
 
 export const StyledPost = styled(Post)`
-	aspect-ratio: 1/1;
+	width: 100%;
 `;

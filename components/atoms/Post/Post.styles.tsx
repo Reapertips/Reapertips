@@ -9,7 +9,7 @@ export const StyledPost = styled.a`
 	border: 1px solid ${transparentize(0.9, white)};
 	border-radius: 3px;
 	aspect-ratio: 1/1;
-	width: 100%;
+	width: 200px;
 	transition: transform 0.2s;
 
 	&:hover {
