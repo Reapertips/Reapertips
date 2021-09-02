@@ -13,7 +13,8 @@ export const StyledPopup = styled.div`
 	gap: 0.75rem;
 	background: ${blue};
 	color: ${white};
-	width: 100%;
+	width: 560px;
+	max-width: 100%;
 	border-radius: 12px;
 	padding: 0.75rem 1.625rem;
 	margin-bottom: 2.5rem;
