@@ -1,4 +1,5 @@
 export const breakpoints = {
+	xxs: 400,
 	xs: 576,
 	sm: 768,
 	md: 992,
@@ -8,6 +9,7 @@ export const breakpoints = {
 };
 
 export const sizes = {
+	xxs: `${breakpoints.xxs}px`,
 	xs: `${breakpoints.xs}px`,
 	sm: `${breakpoints.sm}px`,
 	md: `${breakpoints.md}px`,

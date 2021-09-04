@@ -13,7 +13,7 @@ export interface IButtonCore {
 
 export const ButtonCore = ({ title, icon, subtitle, color, mode }: IButtonCore) => {
 	return (
-		<StyledButton color={color} mode={mode}>
+		<StyledButton color={color} mode={mode} className="button">
 			<div>
 				<h1>{title}</h1>
 				{icon && <Image src={icon?.url} alt={icon?.alt} width={40} height={40} />}
