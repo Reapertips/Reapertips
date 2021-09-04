@@ -16,7 +16,7 @@ export const StyledPopup = styled.div`
 	width: ${sizes.xs};
 	max-width: 100%;
 	border-radius: 12px;
-	padding: 0.75rem 1.625rem;
+	padding: 0.3rem 1.625rem;
 	margin-bottom: 2.5rem;
 	font-size: 0.875rem;
 `;
