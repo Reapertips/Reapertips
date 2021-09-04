@@ -1,3 +1,4 @@
+import { sizes } from '@utils/mediaQueries';
 import { ReactNode } from 'react';
 import styled from 'styled-components';
 
@@ -10,8 +11,8 @@ const StyledContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	width: 80%;
-	max-width: 35rem;
+	width: 90%;
+	max-width: ${sizes.xs};
 	margin: 0 auto;
 `;
 
