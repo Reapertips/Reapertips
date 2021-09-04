@@ -11,6 +11,8 @@ export const StyledPost = styled.a`
 	aspect-ratio: 1/1;
 	padding-bottom: 100%;
 	width: 200px;
+	border-radius: 3px;
+	overflow: hidden;
 	transition: transform 0.2s;
 
 	&:hover {
