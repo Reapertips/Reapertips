@@ -3,6 +3,6 @@ module.exports = {
 	images: {
 		domains: ['media.graphcms.com']
 	},
-	reactStrictMode: true,
-	generateBuildId: async () => 'build'
+	reactStrictMode: true
+	// generateBuildId: async () => 'build'
 };
