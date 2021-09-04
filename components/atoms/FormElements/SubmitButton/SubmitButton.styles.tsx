@@ -4,8 +4,8 @@ import { white, button__blue } from '@utils/colors';
 import { sizes } from '@utils/mediaQueries';
 
 export const StyledSubmitButton = styled.input`
-	min-width: ${sizes.xs};
-	max-width: 100%;
+	width: 100%;
+	max-width: ${sizes.xs};
 	padding: 1rem;
 	border: 0;
 	border-radius: 0.5rem;
@@ -13,6 +13,7 @@ export const StyledSubmitButton = styled.input`
 	font-weight: 600;
 	background: ${button__blue};
 	color: ${white};
+	-webkit-appearance: none;
 
 	&:hover {
 		cursor: pointer;

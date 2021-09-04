@@ -4,7 +4,7 @@ import { TextInput } from '@FormElements/TextInput';
 import { RadioGroup } from '@FormElements/RadioGroup';
 
 import { SuccessToast, ErrorToast } from '@lib/toast';
-import { StyledSubmitButton } from './Form.styles';
+import { StyledForm, StyledSubmitButton } from './Form.styles';
 
 export interface IForm {
 	tipLabel: string;
@@ -68,7 +68,7 @@ export const Form = ({
 	};
 
 	return (
-		<form name="reapertips-suggestions" method="POST" data-netlify="true" onSubmit={handleSubmit}>
+		<StyledForm name="reapertips-suggestions" method="POST" data-netlify="true" onSubmit={handleSubmit}>
 			<input type="hidden" name="form-name" value="reapertips-suggestions" />
 			<TextInput
 				name="message"
@@ -92,6 +92,6 @@ export const Form = ({
 				callback={setCredits}
 			/>
 			<StyledSubmitButton value={submitText} />
-		</form>
+		</StyledForm>
 	);
 };
