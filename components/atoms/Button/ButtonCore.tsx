@@ -16,7 +16,7 @@ export const ButtonCore = ({ title, icon, subtitle, color, mode }: IButtonCore) 
 		<StyledButton color={color} mode={mode} className="button">
 			<div>
 				<h1>{title}</h1>
-				{icon && <Image src={icon?.url} alt={icon?.alt} width={40} height={40} />}
+				{icon && <Image src={icon?.url} alt={icon?.alt} width={50} height={50} />}
 			</div>
 			{subtitle && <p>{subtitle}</p>}
 		</StyledButton>

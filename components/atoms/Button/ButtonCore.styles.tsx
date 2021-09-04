@@ -31,11 +31,11 @@ export const StyledButton = styled.button<Partial<IButtonCore>>`
 	div {
 		display: flex;
 		align-items: center;
-		gap: 1rem;
+		gap: 0.75rem;
 	}
 
 	h1 {
-		font-size: ${(props) => (props.color === 'red' ? '1.5rem' : '1.25rem')};
+		font-size: ${(props) => (props.color === 'red' ? '1.5rem' : '1.2rem')};
 		font-weight: 700;
 	}
 
