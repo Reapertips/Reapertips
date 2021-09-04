@@ -19,7 +19,7 @@ export const Navbar = ({ pageTitle }: INavbar) => {
 				<Wrapper>
 					<Link href="/" passHref>
 						<Logo>
-							<Image src="/logo/logo-white.svg" alt="Reapertips white logo" width={56} height={64} />
+							<Image src="/logo/logo-white.svg" alt="Reapertips white logo" width={56} height={64} priority={true} />
 						</Logo>
 					</Link>
 					<h1>{pageTitle}</h1>
