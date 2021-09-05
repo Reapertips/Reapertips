@@ -1,9 +1,10 @@
-import * as nextImage from 'next/image';
+import * as NextImage from 'next/image';
 import '../styles/globals.css';
 
-Object.defineProperty(nextImage, 'default', {
-	configurable: true,
-	value: (props) => <img {...props} />
+const OriginalNextImage = NextImage.default;
+Object.defineProperty(NextImage, 'default', {
+  configurable: true,
+  value: (props) => <OriginalNextImage {...props} unoptimized />,
 });
 
 export const parameters = {
