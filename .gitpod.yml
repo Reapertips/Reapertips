@@ -1,7 +1,7 @@
 # Commands to start on workspace startup
 tasks:
-  - init: npm install
-    # command: npm run test:watch
+  - init: yarn install
+    # command: yarn run test:watch
 
 github:
   prebuilds:
