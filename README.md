@@ -2,7 +2,7 @@
 
 
 
-This is the respository of Reapertips's ([https://www.instagram.com/reapertips/](https://www.instagram.com/reapertips/)) website.
+This is the respository of [Reapertips](https://www.instagram.com/reapertips/)'s website.
 
 Main technologies used:
 
