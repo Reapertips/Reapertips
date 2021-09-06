@@ -49,8 +49,6 @@ export const Form = ({
 			.map((element) => encodeURIComponent(element.name) + '=' + encodeURIComponent(decode(element.value)))
 			.join('&');
 
-		console.log(filledOutElements);
-
 		await fetch('/', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
