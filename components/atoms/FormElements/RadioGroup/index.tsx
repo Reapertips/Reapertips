@@ -32,10 +32,10 @@ export const RadioGroup = ({ title, name, options, selected, callback }: IRadioG
 					<label>
 						<input
 							type="radio"
-							id={option}
+							id={encode(option)}
 							name={name}
 							value={encode(option)}
-							checked={selectedOption === option}
+							checked={selectedOption === encode(option)}
 							onChange={handleChange}
 						/>
 						{option}
