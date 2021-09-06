@@ -5,7 +5,7 @@ import Container from '@components/templates/Container';
 import Layout from '@components/templates/Layout';
 
 import type { IPage } from '@utils/types';
-import { fetch, getHomePage } from '@utils/queries';
+import { getHomePage, client } from '@utils/queries';
 
 export interface IHomePage extends IPage {
 	profile: IProfile;
@@ -26,7 +26,7 @@ const Home = (props: IHomePage) => {
 };
 
 export const getStaticProps = async () => {
-	const data: IHomePage = (await fetch(getHomePage)).homePages[0];
+	const data: IHomePage = (await client.request(getHomePage)).homePages[0];
 
 	return {
 		props: data

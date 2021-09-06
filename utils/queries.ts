@@ -1,8 +1,8 @@
-import { gql, request } from 'graphql-request';
+import { gql, GraphQLClient } from 'graphql-request';
 
-export const fetch = async (query: string) => {
-	return request('https://api-eu-central-1.graphcms.com/v2/cksvw8od10l0c01yxdff75601/master', query);
-};
+const URL = 'https://api-eu-central-1.graphcms.com/v2/cksvw8od10l0c01yxdff75601/master';
+
+export const client = new GraphQLClient(URL);
 
 export const getHomePage = gql`
 	query getHomePage {

@@ -4,7 +4,7 @@ import { Form, IForm } from '@components/organisms/Form';
 import Layout from '@components/templates/Layout';
 import Container from '@components/templates/Container';
 
-import { fetch, getSubmitPage } from '@utils/queries';
+import { client, getSubmitPage } from '@utils/queries';
 import type { IPage } from '@utils/types';
 
 export interface ISubmitPage extends IPage, IForm {
@@ -28,7 +28,7 @@ const Submit = (props: ISubmitPage) => {
 export default Submit;
 
 export const getStaticProps = async () => {
-	const data = (await fetch(getSubmitPage)).submitPages[0];
+	const data = (await client.request(getSubmitPage)).submitPages[0];
 
 	return {
 		props: data

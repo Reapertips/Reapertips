@@ -5,7 +5,7 @@ import { Gallery } from '@components/organisms/Gallery';
 import Layout from '@components/templates/Layout';
 import Container from '@components/templates/Container';
 
-import { fetch, getDownloadsPage } from '@utils/queries';
+import { client, getDownloadsPage } from '@utils/queries';
 import type { IPage } from '@utils/types';
 
 export interface IDownloadsPage extends IPage {
@@ -30,7 +30,7 @@ const Downloads = (props: IDownloadsPage) => {
 export default Downloads;
 
 export const getStaticProps = async () => {
-	const data = (await fetch(getDownloadsPage)).downloadPages[0];
+	const data = (await client.request(getDownloadsPage)).downloadPages[0];
 
 	return {
 		props: data
