@@ -13,7 +13,7 @@ export interface IDownloadsPage extends IPage {
 	posts: IPost[];
 }
 
-const Downloads = (props: IDownloadsPage) => {
+export default function Downloads(props: IDownloadsPage) {
 	const { pageTitle, popup, posts } = props;
 
 	return (
@@ -25,9 +25,7 @@ const Downloads = (props: IDownloadsPage) => {
 			</Container>
 		</Layout>
 	);
-};
-
-export default Downloads;
+}
 
 export const getStaticProps = async () => {
 	const data = (await client.request(getDownloadsPage)).downloadPages[0];

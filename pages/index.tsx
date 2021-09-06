@@ -12,7 +12,7 @@ export interface IHomePage extends IPage {
 	buttons: IButton[];
 }
 
-const Home = (props: IHomePage) => {
+export default function Home(props: IHomePage) {
 	const { profile, buttons } = props;
 
 	return (
@@ -23,7 +23,7 @@ const Home = (props: IHomePage) => {
 			</Container>
 		</Layout>
 	);
-};
+}
 
 export const getStaticProps = async () => {
 	const data: IHomePage = (await client.request(getHomePage)).homePages[0];
@@ -32,5 +32,3 @@ export const getStaticProps = async () => {
 		props: data
 	};
 };
-
-export default Home;

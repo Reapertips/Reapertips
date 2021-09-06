@@ -11,7 +11,7 @@ export interface ISubmitPage extends IPage, IForm {
 	popup: IPopup;
 }
 
-const Submit = (props: ISubmitPage) => {
+export default function Submit(props: ISubmitPage) {
 	const { pageTitle, popup } = props;
 
 	return (
@@ -23,9 +23,7 @@ const Submit = (props: ISubmitPage) => {
 			</Container>
 		</Layout>
 	);
-};
-
-export default Submit;
+}
 
 export const getStaticProps = async () => {
 	const data = (await client.request(getSubmitPage)).submitPages[0];
