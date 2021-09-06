@@ -43,12 +43,13 @@ export const Form = ({
 		setSubmitText('Submitting...');
 
 		const formElements = [...e.currentTarget.elements];
-		formElements.forEach((el) => decode(el));
 
 		const filledOutElements = formElements
 			.filter((elem) => !!elem.value)
-			.map((element) => encodeURIComponent(element.name) + '=' + encodeURIComponent(element.value))
+			.map((element) => encodeURIComponent(decode(element.name)) + '=' + encodeURIComponent(decode(element.value)))
 			.join('&');
+
+		console.log(filledOutElements);
 
 		await fetch('/', {
 			method: 'POST',
