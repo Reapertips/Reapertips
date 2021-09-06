@@ -42,19 +42,20 @@ export const Form = ({
 
 		setSubmitText('Submitting...');
 
-		const data = {
-			message,
-			username,
-			credits
-		};
+		const formElements = [...e.currentTarget.elements];
+
+		const filledOutElements = formElements
+			.filter((element) => !!element.value)
+			.map((element) => {
+				if (element.type === 'radio' && !element.checked) return null;
+				return encodeURIComponent(element.name) + '=' + encodeURIComponent(decode(element.value));
+			})
+			.join('&');
 
 		await fetch('/', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-			body: Object.entries(data)
-				// .filter(([, value]) => !!value)
-				.map(([key, value]) => encodeURIComponent(key) + '=' + encodeURIComponent(decode(value)))
-				.join('&')
+			body: filledOutElements
 		})
 			.then(() => {
 				SuccessToast('Tip sent!');
