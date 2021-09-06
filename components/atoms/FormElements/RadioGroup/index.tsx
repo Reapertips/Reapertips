@@ -1,4 +1,5 @@
 import { useState, useEffect, Dispatch, SetStateAction } from 'react';
+import { encode } from 'he';
 
 import { Title, Option } from './RadioGroup.styles';
 
@@ -21,9 +22,6 @@ export const RadioGroup = ({ title, name, options, selected, callback }: IRadioG
 
 	const handleChange = (e: { target: { value: SetStateAction<string> } }) => {
 		setSelectedOption(e.target.value);
-		// if (callback) {
-		// 	callback(e.target.value);
-		// }
 	};
 
 	return (
@@ -36,7 +34,7 @@ export const RadioGroup = ({ title, name, options, selected, callback }: IRadioG
 							type="radio"
 							id={option}
 							name={name}
-							value={option}
+							value={encode(option)}
 							checked={selectedOption === option}
 							onChange={handleChange}
 						/>
