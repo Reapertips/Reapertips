@@ -42,17 +42,19 @@ export const Form = ({
 
 		setSubmitText('Submitting...');
 
-		const formElements = [...e.currentTarget.elements];
-
-		const filledOutElements = formElements
-			.filter((elem) => !!elem.value)
-			.map((element) => encodeURIComponent(element.name) + '=' + encodeURIComponent(element.value))
-			.join('&');
+		const data = {
+			message,
+			username,
+			credits
+		};
 
 		await fetch('/', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-			body: filledOutElements
+			body: Object.entries(data)
+				.filter(([, value]) => !!value)
+				.map(([key, value]) => encodeURIComponent(key) + '=' + encodeURIComponent(decode(value)))
+				.join('&')
 		})
 			.then(() => {
 				SuccessToast('Tip sent!');
