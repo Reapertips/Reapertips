@@ -52,7 +52,7 @@ export const Form = ({
 			method: 'POST',
 			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
 			body: Object.entries(data)
-				.filter(([, value]) => !!value)
+				// .filter(([, value]) => !!value)
 				.map(([key, value]) => encodeURIComponent(key) + '=' + encodeURIComponent(decode(value)))
 				.join('&')
 		})
