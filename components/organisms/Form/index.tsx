@@ -89,6 +89,7 @@ export const Form = ({
 					label={{ text: usernameLabel, size: 'default' }}
 					input={{ type: 'text', placeholder: usernamePlaceholder, value: username }}
 					callback={setUsername}
+					required
 				/>
 			)}
 			<SubmitButton value={submitText} />
