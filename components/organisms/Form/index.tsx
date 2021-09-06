@@ -28,7 +28,7 @@ export const Form = ({
 }: IForm) => {
 	const [message, setMessage] = useState<string>('');
 	const [username, setUsername] = useState<string>('');
-	const [credits, setCredits] = useState<string>(creditsOptions[0]);
+	const [credits, setCredits] = useState<string>(creditsOptions[1]);
 	const [submitText, setSubmitText] = useState<string>(submitButton);
 
 	const resetForm = () => {
