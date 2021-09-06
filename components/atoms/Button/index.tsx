@@ -6,7 +6,7 @@ export interface IButton extends ILinkButton {
 }
 
 export const Button = (props: IButton) => {
-	const { link } = props;
+	const { href } = props;
 
-	return link === undefined ? <ButtonCore {...props} /> : <LinkButton {...props} />;
+	return href === undefined || href === '' ? <ButtonCore {...props} /> : <LinkButton {...props} />;
 };

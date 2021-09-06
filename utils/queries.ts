@@ -31,8 +31,7 @@ export const getHomePage = gql`
 					alt
 				}
 				subtitle
-				externalLink
-				link
+				href
 				color
 				mode
 			}
