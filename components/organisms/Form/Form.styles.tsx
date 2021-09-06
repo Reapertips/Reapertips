@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { SubmitButton } from '@components/atoms/FormElements/SubmitButton';
+import { SubmitButton } from '@components/atoms/FormElements';
 
 import { sizes } from '@utils/mediaQueries';
 

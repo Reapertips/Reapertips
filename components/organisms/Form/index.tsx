@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
-import { TextInput } from '@FormElements/TextInput';
-import { RadioGroup } from '@FormElements/RadioGroup';
+import { TextInput, RadioGroup } from '@components/atoms/FormElements';
 
 import { SuccessToast, ErrorToast } from '@lib/toast';
 import { StyledForm, StyledSubmitButton } from './Form.styles';
