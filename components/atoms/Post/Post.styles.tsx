@@ -16,6 +16,12 @@ export const StyledPost = styled.a`
 	overflow: hidden;
 	transition: transform 0.2s;
 
+	&:after {
+		content: '';
+		display: block;
+		padding-bottom: 100%;
+	}
+
 	&:hover {
 		transform: scale(1.05);
 	}
