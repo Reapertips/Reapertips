@@ -5,6 +5,7 @@ export interface ITextInput {
 	name: string;
 	required?: boolean;
 	disabled?: boolean;
+	hidden?: boolean;
 	label?: {
 		text: string;
 		size: 'default' | 'big';
@@ -25,7 +26,8 @@ export interface ITextInput {
 export const TextInput = ({
 	name,
 	required = false,
-	disabled,
+	disabled = false,
+	hidden = false,
 	label,
 	description,
 	input,
@@ -41,7 +43,7 @@ export const TextInput = ({
 	}, [callback, value]);
 
 	return (
-		<FormInputGroup>
+		<FormInputGroup hidden={hidden}>
 			{label && (
 				<FormLabel label={label} htmlFor={name}>
 					{label.text} {!required && <span>(optional)</span>}
@@ -56,7 +58,8 @@ export const TextInput = ({
 					placeholder={input.placeholder}
 					value={input.value}
 					required={required}
-					disabled={!!disabled}
+					disabled={disabled}
+					hidden={hidden}
 					textarea={textarea}
 					onChange={(e: { target: { value: SetStateAction<string> } }) => setValue(e.target.value)}
 				/>
@@ -68,7 +71,8 @@ export const TextInput = ({
 					name={name}
 					placeholder={textarea.placeholder}
 					value={textarea.value}
-					disabled={!!disabled}
+					disabled={disabled}
+					hidden={hidden}
 					required={required}
 					textarea={textarea}
 					onChange={(e: { target: { value: SetStateAction<string> } }) => setValue(e.target.value)}

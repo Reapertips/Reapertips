@@ -29,7 +29,7 @@ export const Form = ({
 }: IForm) => {
 	const [message, setMessage] = useState<string>('');
 	const [username, setUsername] = useState<string>('');
-	const [credits, setCredits] = useState<string>(encode(creditsOptions[1]));
+	const [credits, setCredits] = useState<string>(encode(creditsOptions[0]));
 	const [submitText, setSubmitText] = useState<string>(submitButton);
 
 	const resetForm = () => {
@@ -51,6 +51,8 @@ export const Form = ({
 				return encodeURIComponent(element.name) + '=' + encodeURIComponent(decode(element.value));
 			})
 			.join('&');
+
+		console.log(filledOutElements);
 
 		await fetch('/', {
 			method: 'POST',

@@ -5,8 +5,8 @@ import { ITextInput } from '.';
 import { white } from '@utils/colors';
 import { sizes } from '@utils/mediaQueries';
 
-export const FormInputGroup = styled.div`
-	display: flex;
+export const FormInputGroup = styled.div<Partial<ITextInput>>`
+	display: ${(props) => (props.hidden ? 'none' : 'flex')};
 	flex-direction: column;
 `;
 
@@ -45,6 +45,10 @@ export const StyledFormInput = styled.input<Partial<ITextInput>>`
 
 	&:hover {
 		cursor: pointer;
+	}
+
+	&:disabled {
+		cursor: not-allowed;
 	}
 
 	&:focus {
