@@ -20,8 +20,7 @@ Default.args = {
 				alt: 'ko-fi.com logo'
 			},
 			subtitle: 'Help me fund the reapertips app!',
-			externalLink: true,
-			link: 'https://ko-fi.com/reapertips',
+			href: 'https://ko-fi.com/reapertips',
 			color: 'red',
 			mode: 'primary'
 		},
@@ -29,16 +28,14 @@ Default.args = {
 			id: 'cksvyyemwpgkd0c56txf2772g',
 			title: 'Submit your tip',
 			subtitle: 'and get credited in my next post',
-			externalLink: false,
-			link: 'https://reapertips.webflow.io/submit',
+			href: '/submit',
 			color: 'blue',
 			mode: 'primary'
 		},
 		{
 			id: 'cksvyynw8pizo0b54u4ulxfr9',
 			title: 'Downloads',
-			externalLink: false,
-			link: 'https://reapertips.webflow.io/downloads',
+			href: '/downloads',
 			color: 'blue',
 			mode: 'primary'
 		}
