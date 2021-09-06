@@ -22,27 +22,29 @@ export const RadioGroup = ({ title, name, options, selected, callback }: IRadioG
 
 	const handleChange = (e: { target: { value: string } }) => {
 		const { value } = e.target;
-		setSelectedOption(decode(value));
+		setSelectedOption(value);
 	};
 
 	return (
 		<div>
 			<Title>{title}</Title>
-			{options.map((option) => (
-				<Option key={option}>
-					<label>
-						<input
-							type="radio"
-							id={encode(option)}
-							name={name}
-							value={encode(option)}
-							checked={selectedOption === option}
-							onChange={handleChange}
-						/>
-						{option}
-					</label>
-				</Option>
-			))}
+			{options
+				.map((option) => encode(option))
+				.map((option) => (
+					<Option key={option}>
+						<label>
+							<input
+								type="radio"
+								id={option}
+								name={name}
+								value={option}
+								checked={selectedOption === option}
+								onChange={handleChange}
+							/>
+							{decode(option)}
+						</label>
+					</Option>
+				))}
 		</div>
 	);
 };

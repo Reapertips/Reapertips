@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { decode } from 'he';
+import { decode, encode } from 'he';
 
 import { TextInput, RadioGroup, SubmitButton } from '@components/atoms/FormElements';
 
@@ -29,7 +29,7 @@ export const Form = ({
 }: IForm) => {
 	const [message, setMessage] = useState<string>('');
 	const [username, setUsername] = useState<string>('');
-	const [credits, setCredits] = useState<string>(creditsOptions[1]);
+	const [credits, setCredits] = useState<string>(encode(creditsOptions[1]));
 	const [submitText, setSubmitText] = useState<string>(submitButton);
 
 	const resetForm = () => {
