@@ -34,7 +34,6 @@ export const Form = ({
 	const resetForm = () => {
 		setMessage('');
 		setUsername('');
-		setCredits(creditsOptions[0]);
 	};
 
 	const handleSubmit = async (e: { preventDefault: () => void; currentTarget: { elements: any } }) => {
