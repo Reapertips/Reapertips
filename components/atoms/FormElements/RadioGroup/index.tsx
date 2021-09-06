@@ -21,7 +21,8 @@ export const RadioGroup = ({ title, name, options, selected, callback }: IRadioG
 	}, [callback, selectedOption]);
 
 	const handleChange = (e: { target: { value: string } }) => {
-		setSelectedOption(decode(e.target.value));
+		const { value } = e.target;
+		setSelectedOption(decode(value));
 	};
 
 	return (
@@ -35,7 +36,7 @@ export const RadioGroup = ({ title, name, options, selected, callback }: IRadioG
 							id={encode(option)}
 							name={name}
 							value={encode(option)}
-							checked={encode(selectedOption) === encode(option)}
+							checked={selectedOption === option}
 							onChange={handleChange}
 						/>
 						{option}

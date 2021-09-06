@@ -46,7 +46,7 @@ export const Form = ({
 
 		const filledOutElements = formElements
 			.filter((elem) => !!elem.value)
-			.map((element) => encodeURIComponent(element.name) + '=' + encodeURIComponent(decode(element.value)))
+			.map((element) => encodeURIComponent(element.name) + '=' + encodeURIComponent(element.value))
 			.join('&');
 
 		await fetch('/', {
