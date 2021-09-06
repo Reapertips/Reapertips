@@ -35,7 +35,7 @@ export const RadioGroup = ({ title, name, options, selected, callback }: IRadioG
 							id={encode(option)}
 							name={name}
 							value={encode(option)}
-							checked={selectedOption === encode(option)}
+							checked={encode(selectedOption) === encode(option)}
 							onChange={handleChange}
 						/>
 						{option}
