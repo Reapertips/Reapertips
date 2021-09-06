@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { decode } from 'he';
 
 import { TextInput, RadioGroup, SubmitButton } from '@components/atoms/FormElements';
 
@@ -42,6 +43,7 @@ export const Form = ({
 		setSubmitText('Submitting...');
 
 		const formElements = [...e.currentTarget.elements];
+		formElements.forEach((el) => decode(el));
 
 		const filledOutElements = formElements
 			.filter((elem) => !!elem.value)
