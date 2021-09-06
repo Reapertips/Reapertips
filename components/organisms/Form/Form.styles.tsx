@@ -1,14 +1,16 @@
 import styled from 'styled-components';
 
-import { SubmitButton } from '@components/atoms/FormElements';
-
 import { sizes } from '@utils/mediaQueries';
 
 export const StyledForm = styled.form`
 	width: 100%;
 	max-width: ${sizes.xs};
-`;
 
-export const StyledSubmitButton = styled(SubmitButton)`
-	margin-top: 5rem;
+	& > * {
+		margin-bottom: 2rem;
+	}
+
+	& > *:last-child {
+		margin-top: 2rem;
+	}
 `;

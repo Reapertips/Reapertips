@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
-import { TextInput, RadioGroup } from '@components/atoms/FormElements';
+import { TextInput, RadioGroup, SubmitButton } from '@components/atoms/FormElements';
 
 import { SuccessToast, ErrorToast } from '@lib/toast';
-import { StyledForm, StyledSubmitButton } from './Form.styles';
+import { StyledForm } from './Form.styles';
 
 export interface IForm {
 	tipLabel: string;
@@ -77,12 +77,6 @@ export const Form = ({
 				callback={setMessage}
 				required
 			/>
-			<TextInput
-				name="username"
-				label={{ text: usernameLabel, size: 'default' }}
-				input={{ type: 'text', placeholder: usernamePlaceholder, value: username }}
-				callback={setUsername}
-			/>
 			<RadioGroup
 				title={creditsLabel}
 				name="credits"
@@ -90,7 +84,15 @@ export const Form = ({
 				selected={credits}
 				callback={setCredits}
 			/>
-			<StyledSubmitButton value={submitText} />
+			{credits.toLowerCase().startsWith('yes') && (
+				<TextInput
+					name="username"
+					label={{ text: usernameLabel, size: 'default' }}
+					input={{ type: 'text', placeholder: usernamePlaceholder, value: username }}
+					callback={setUsername}
+				/>
+			)}
+			<SubmitButton value={submitText} />
 		</StyledForm>
 	);
 };

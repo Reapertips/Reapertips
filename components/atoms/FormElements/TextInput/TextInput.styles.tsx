@@ -8,10 +8,6 @@ import { sizes } from '@utils/mediaQueries';
 export const FormInputGroup = styled.div`
 	display: flex;
 	flex-direction: column;
-
-	&:not(:last-child) {
-		margin-bottom: 2rem;
-	}
 `;
 
 export const FormLabel = styled.label<Partial<ITextInput>>`
