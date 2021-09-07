@@ -5,9 +5,9 @@ export const StyledProfile = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 1rem;
+	gap: 0.5rem;
 	color: ${white};
-	margin: 3rem 0 2.5rem 0;
+	margin: 3rem 0;
 `;
 
 export const ProfilePicture = styled.div`
@@ -27,5 +27,6 @@ export const Username = styled.a`
 	p {
 		display: inline;
 		margin-left: 0.5rem;
+		padding-bottom: 5px;
 	}
 `;
