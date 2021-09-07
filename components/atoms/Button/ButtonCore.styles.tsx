@@ -33,7 +33,11 @@ export const StyledButton = styled.button<Partial<IButtonCore>>`
 export const Wrapper = styled.div`
 	display: flex;
 	align-items: center;
-	gap: 0.75rem;
+`;
+
+export const ImageWrapper = styled.div`
+	display: flex;
+	margin-left: 0.75rem;
 `;
 
 export const Title = styled.h1`

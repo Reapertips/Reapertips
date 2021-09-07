@@ -10,7 +10,6 @@ export const StyledPopup = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	gap: 0.75rem;
 	background: ${blue};
 	color: ${white};
 	width: ${sizes.xs};
@@ -37,10 +36,11 @@ export const Close = styled.div<Partial<IPopup>>`
 	}
 `;
 
-export const MessageIcon = styled.div`
+export const Icon = styled.div`
 	display: none;
 	position: relative;
 	height: 2.5rem;
+	margin-right: 0.75rem;
 
 	@media ${devices.sm} {
 		display: flex;

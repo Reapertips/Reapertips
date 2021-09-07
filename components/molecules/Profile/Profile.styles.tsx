@@ -5,7 +5,6 @@ export const StyledProfile = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 0.5rem;
 	color: ${white};
 	margin: 3rem 0;
 `;
@@ -23,6 +22,7 @@ export const Username = styled.a`
 	font-size: 2rem;
 	font-family: 'Ubuntu', sans-serif;
 	font-weight: 700;
+	margin-top: 0.5rem;
 
 	p {
 		display: inline;

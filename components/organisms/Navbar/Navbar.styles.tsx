@@ -43,6 +43,11 @@ export const StyledContainer = styled(Container)`
 
 export const Logo = styled.a`
 	display: flex;
+	margin: 0 0 0.5rem 0;
+
+	@media ${devices.xs} {
+		margin: 0 1.25rem 0 0;
+	}
 `;
 
 export const PageTitle = styled.h1`
@@ -53,11 +58,9 @@ export const Wrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 0.5rem;
 
 	@media ${devices.xs} {
 		flex-direction: row;
-		gap: 1.25rem;
 	}
 
 	h1 {

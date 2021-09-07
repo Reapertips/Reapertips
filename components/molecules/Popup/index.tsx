@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
-import { StyledPopup, Close, MessageIcon } from './Popup.styles';
+import { StyledPopup, Close, Icon } from './Popup.styles';
 import { IImage } from '@utils/types';
 
 export interface IPopup {
@@ -32,9 +32,9 @@ export const Popup = ({ icon, text, closable = false, className }: IPopup) => {
 			<Close onClick={() => setVisible(false)} closable={closable}>
 				<Image src="/icons/close.svg" alt="White close icon" width={12} height={12} />
 			</Close>
-			<MessageIcon>
+			<Icon>
 				<Image src={icon.url} alt={icon.alt} width={28} height={28} />
-			</MessageIcon>
+			</Icon>
 			<div dangerouslySetInnerHTML={{ __html: text.html }} />
 		</StyledPopup>
 	) : null;
