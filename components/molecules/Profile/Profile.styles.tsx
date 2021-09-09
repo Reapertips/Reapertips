@@ -10,6 +10,8 @@ export const StyledProfile = styled.div`
 `;
 
 export const ProfilePicture = styled.div`
+	display: flex;
+
 	img {
 		height: 150px;
 		border-radius: 100%;
