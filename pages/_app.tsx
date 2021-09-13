@@ -1,4 +1,5 @@
 import type { AppProps } from 'next/app';
+import Script from 'next/script';
 import { ToastContainer } from 'react-toastify';
 import { toastConfig } from '@lib/toast';
 import 'react-toastify/dist/ReactToastify.css';
@@ -25,6 +26,17 @@ function MyApp({ Component, pageProps }: AppProps) {
 				draggable
 				pauseOnHover={toastConfig.pauseOnHover}
 			/>
+
+			<Script strategy="lazyOnload" src="https://www.googletagmanager.com/gtag/js?id=G-DQ71LHJ52N" />
+			<Script strategy="lazyOnload">
+				{`
+					window.dataLayer = window.dataLayer || [];
+					function gtag(){dataLayer.push(arguments);}
+					gtag('js', new Date());
+					gtag('config', 'G-DQ71LHJ52N');
+				`}
+			</Script>
+
 			<Component {...pageProps} />
 		</>
 	);
