@@ -25,6 +25,11 @@ export const Username = styled.a`
 	font-family: 'Ubuntu', sans-serif;
 	font-weight: 700;
 	margin-top: 0.5rem;
+	transition: opacity 0.2s;
+
+	&:hover {
+		opacity: 0.8;
+	}
 
 	p {
 		display: inline;
