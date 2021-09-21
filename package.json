@@ -9,6 +9,8 @@
 		"lint": "next lint",
 		"format": "prettier --write --plugin-search-dir=. .",
 		"format:staged": "pretty-quick --staged",
+		"start-storybook": "start-storybook -s ./public -p 6006",
+		"build-storybook": "build-storybook -s ./public",
 		"chromatic": "chromatic --exit-zero-on-changes",
 		"postinstall": "husky install"
 	},
@@ -28,6 +30,12 @@
 	},
 	"devDependencies": {
 		"@babel/core": "^7.14.6",
+		"@storybook/addon-actions": "^6.3.8",
+		"@storybook/addon-essentials": "^6.3.8",
+		"@storybook/addon-links": "^6.3.8",
+		"@storybook/builder-webpack5": "^6.3.8",
+		"@storybook/manager-webpack5": "^6.3.8",
+		"@storybook/react": "^6.3.8",
 		"@types/he": "^1.1.2",
 		"@types/react": "17.0.11",
 		"@types/styled-components": "^5.1.10",
