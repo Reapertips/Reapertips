@@ -1,6 +1,7 @@
-import { sizes } from '@utils/mediaQueries';
 import { ReactNode } from 'react';
 import styled from 'styled-components';
+
+import { sizes } from '@utils/mediaQueries';
 
 interface IContainer {
 	className?: string;

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { decode, encode } from 'he';
 
-import { TextInput, RadioGroup, SubmitButton } from '@components/UI/atoms/FormElements';
+import { TextInput, RadioGroup, SubmitButton } from '@atoms/FormElements';
 
 import { SuccessToast, ErrorToast } from '@lib/toast';
 import { StyledForm } from './Form.styles';

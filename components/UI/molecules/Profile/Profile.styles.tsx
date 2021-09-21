@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import { white } from '@utils/colors';
 
 export const StyledProfile = styled.div`
