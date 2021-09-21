@@ -1,9 +1,9 @@
-import { Popup, IPopup } from '@components/molecules/Popup';
-import { IPost } from '@components/atoms/Post';
-import { Navbar } from '@components/organisms/Navbar';
-import { Gallery } from '@components/organisms/Gallery';
-import Layout from '@components/templates/Layout';
-import Container from '@components/templates/Container';
+import { Popup, IPopup } from '@components/UI/molecules/Popup';
+import { IPost } from '@components/UI/atoms/Post';
+import { Navbar } from '@components/UI/organisms/Navbar';
+import { Gallery } from '@components/UI/organisms/Gallery';
+import Layout from '@components/utils/Layout';
+import Container from '@components/utils/Container';
 
 import { client, getDownloadsPage } from '@utils/queries';
 import type { IPage } from '@utils/types';

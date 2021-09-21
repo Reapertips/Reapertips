@@ -1,5 +1,5 @@
 import { StyledGallery, StyledPost } from './Gallery.styles';
-import { IPost } from '@components/atoms/Post';
+import { IPost } from '@components/UI/atoms/Post';
 
 export interface IGallery {
 	posts: IPost[];

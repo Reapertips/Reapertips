@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { transparentize } from 'polished';
 
-import Container from '@components/templates/Container';
+import Container from '@components/utils/Container';
 
 import { black, blue, white } from '@utils/colors';
 import { devices } from '@utils/mediaQueries';

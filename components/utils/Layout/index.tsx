@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import SEO from '@templates/SEO';
+import SEO from '@components/utils/SEO';
 import { StyledLayout } from './Layout.styles';
 import { IPage } from '@utils/types';
 

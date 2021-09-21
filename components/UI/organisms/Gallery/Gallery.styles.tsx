@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { Post } from '@components/atoms/Post';
+import { Post } from '@components/UI/atoms/Post';
 
 import { sizes } from '@utils/mediaQueries';
 

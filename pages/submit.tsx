@@ -1,8 +1,8 @@
-import { Popup, IPopup } from '@components/molecules/Popup';
-import { Navbar } from '@components/organisms/Navbar';
-import { Form, IForm } from '@components/organisms/Form';
-import Layout from '@components/templates/Layout';
-import Container from '@components/templates/Container';
+import { Popup, IPopup } from '@components/UI/molecules/Popup';
+import { Navbar } from '@components/UI/organisms/Navbar';
+import { Form, IForm } from '@components/UI/organisms/Form';
+import Layout from '@components/utils/Layout';
+import Container from '@components/utils/Container';
 
 import { client, getSubmitPage } from '@utils/queries';
 import type { IPage } from '@utils/types';
