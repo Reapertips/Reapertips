@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 import { ITextInput } from '.';
 
-import { white } from '@utils/colors';
 import { sizes } from '@utils/mediaQueries';
 
 export const FormInputGroup = styled.div<Partial<ITextInput>>`
@@ -11,7 +10,7 @@ export const FormInputGroup = styled.div<Partial<ITextInput>>`
 `;
 
 export const FormLabel = styled.label<Partial<ITextInput>>`
-	color: ${white};
+	color: ${(props) => props.theme.dark.greyscale[100]};
 	font-size: ${(props) => (props.label?.size === 'default' ? '1rem' : '1.5rem')};
 	font-weight: 700;
 	margin-bottom: 0.5rem;
@@ -24,7 +23,7 @@ export const FormLabel = styled.label<Partial<ITextInput>>`
 `;
 
 export const FormDescription = styled.p`
-	color: ${white};
+	color: ${(props) => props.theme.dark.greyscale[100]};
 	opacity: 0.6;
 	font-size: 0.75rem;
 	margin-bottom: 0.75rem;
@@ -40,7 +39,7 @@ export const StyledFormInput = styled.input<Partial<ITextInput>>`
 	padding: 1rem;
 	font-size: 0.875rem;
 	background: #394256;
-	color: ${white};
+	color: ${(props) => props.theme.dark.greyscale[100]};
 	resize: vertical;
 
 	&:hover {
@@ -56,7 +55,7 @@ export const StyledFormInput = styled.input<Partial<ITextInput>>`
 	}
 
 	&::placeholder {
-		color: ${white};
+		color: ${(props) => props.theme.dark.greyscale[100]};
 		opacity: 0.4;
 	}
 `;

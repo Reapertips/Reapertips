@@ -1,16 +1,14 @@
 import styled from 'styled-components';
 import { transparentize } from 'polished';
 
-import { white } from '@utils/colors';
-
 export const Title = styled.h1`
 	font-size: 1rem;
-	color: ${white};
+	color: ${(props) => props.theme.dark.greyscale[100]};
 	margin-bottom: 0.5rem;
 `;
 
 export const Option = styled.div`
-	color: ${transparentize(0.4, white)};
+	color: ${(props) => transparentize(0.4, props.theme.dark.greyscale[100])};
 	width: fit-content;
 
 	&:not(:last-child) {

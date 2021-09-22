@@ -2,10 +2,13 @@ import styled from 'styled-components';
 
 import { IButtonCore } from './ButtonCore';
 
-import { white, button__blue, button__red } from '@utils/colors';
+import { theme } from '@lib/themes';
 import { sizes } from '@utils/mediaQueries';
 
-const getButtonColor = (color: 'red' | 'blue') => (color === 'blue' ? button__blue : button__red);
+const getButtonColor = (color: 'red' | 'blue') => {
+	const { blue, red } = theme.dark;
+	return color === 'blue' ? blue[400] : red[400];
+};
 
 export const StyledButton = styled.button<Partial<IButtonCore>>`
 	display: flex;
@@ -14,14 +17,15 @@ export const StyledButton = styled.button<Partial<IButtonCore>>`
 	text-align: center;
 	padding: 1rem 1.25rem;
 	border-radius: 12px;
-	background-color: ${(props) => (props.color === 'blue' ? button__blue : button__red)};
+	background-color: ${(props) => (props.color === 'blue' ? props.theme.dark.blue[400] : props.theme.dark.red[400])};
 	background: ${(props) => props.mode === 'secondary' && 'none'};
 	border: 0;
 	box-shadow: ${(props) =>
 		props.mode === 'primary' ? 'none' : props.color && `inset 0 0 0 2px ${getButtonColor(props.color)}`};
 	width: 100%;
 	max-width: ${sizes.xxs};
-	color: ${(props) => (props.mode === 'primary' ? white : props.color && getButtonColor(props.color))};
+	color: ${(props) =>
+		props.mode === 'primary' ? props.theme.dark.greyscale[100] : props.color && getButtonColor(props.color)};
 	transition: transform 0.2s;
 
 	&:hover {

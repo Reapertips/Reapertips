@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 import { transparentize } from 'polished';
 
-import { white } from '@utils/colors';
 import { sizes } from '@utils/mediaQueries';
 
 export const StyledPost = styled.a`
 	position: relative;
 	display: flex;
-	border: 1px solid ${transparentize(0.9, white)};
+	border: 1px solid ${(props) => transparentize(0.9, props.theme.dark.greyscale[100])};
 	border-radius: 3px;
 	aspect-ratio: 1/1;
 	width: 200px;

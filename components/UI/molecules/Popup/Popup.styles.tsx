@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 import { IPopup } from '.';
 
-import { blue, white } from '@utils/colors';
 import { devices, sizes } from '@utils/mediaQueries';
 
 export const StyledPopup = styled.div`
@@ -10,8 +9,8 @@ export const StyledPopup = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: ${blue};
-	color: ${white};
+	background: ${(props) => props.theme.dark.blue[400]};
+	color: ${(props) => props.theme.dark.greyscale[100]};
 	width: ${sizes.xs};
 	max-width: 100%;
 	border-radius: 12px;

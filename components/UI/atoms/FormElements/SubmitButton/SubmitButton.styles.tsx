@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-import { white, button__blue } from '@utils/colors';
 import { sizes } from '@utils/mediaQueries';
 
 export const StyledSubmitButton = styled.input`
@@ -11,8 +10,8 @@ export const StyledSubmitButton = styled.input`
 	border-radius: 0.5rem;
 	font-size: 1rem;
 	font-weight: 600;
-	background: ${button__blue};
-	color: ${white};
+	background: ${(props) => props.theme.dark.blue[400]};
+	color: ${(props) => props.theme.dark.greyscale[100]};
 	-webkit-appearance: none;
 
 	&:hover {

@@ -3,15 +3,18 @@ import { transparentize } from 'polished';
 
 import Container from '@components/utils/Container';
 
-import { black, blue, white } from '@utils/colors';
 import { devices } from '@utils/mediaQueries';
 
 export const StyledNavbar = styled.nav`
 	position: relative;
 	padding: 2rem 1.25rem;
-	background: ${blue};
-	background-image: linear-gradient(to top, ${transparentize(0.73, black)}, transparent);
-	color: ${white};
+	background: ${(props) => props.theme.dark.blue[400]};
+	background-image: linear-gradient(
+		to top,
+		${(props) => transparentize(0.73, props.theme.dark.greyscale[700])},
+		transparent
+	);
+	color: ${(props) => props.theme.dark.greyscale[100]};
 	margin-bottom: 2.5rem;
 `;
 
