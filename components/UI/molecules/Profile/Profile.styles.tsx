@@ -1,12 +1,10 @@
 import styled from 'styled-components';
 
-import { white } from '@utils/colors';
-
 export const StyledProfile = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	color: ${white};
+	color: ${(props) => props.theme.dark.greyscale[100]};
 	margin: 3rem 0;
 `;
 

@@ -1,7 +1,9 @@
 import type { AppProps } from 'next/app';
 import Script from 'next/script';
 import { ToastContainer } from 'react-toastify';
+import { ThemeProvider } from 'styled-components';
 import { toastConfig } from '@lib/toast';
+import { theme } from '@lib/themes';
 import 'react-toastify/dist/ReactToastify.css';
 
 import '@fontsource/ubuntu';
@@ -37,7 +39,9 @@ function MyApp({ Component, pageProps }: AppProps) {
 				`}
 			</Script>
 
-			<Component {...pageProps} />
+			<ThemeProvider theme={theme}>
+				<Component {...pageProps} />
+			</ThemeProvider>
 		</>
 	);
 }
