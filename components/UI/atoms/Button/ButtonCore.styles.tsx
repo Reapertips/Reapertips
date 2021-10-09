@@ -2,11 +2,11 @@ import styled from 'styled-components';
 
 import { IButtonCore } from './ButtonCore';
 
-import { theme } from '@lib/themes';
+import { theme } from '@lib/theme';
 import { sizes } from '@utils/mediaQueries';
 
 const getButtonColor = (color: 'red' | 'blue') => {
-	const { blue, red } = theme.dark;
+	const { blue, red } = theme.colors;
 	return color === 'blue' ? blue[400] : red[400];
 };
 
@@ -17,7 +17,7 @@ export const StyledButton = styled.button<Partial<IButtonCore>>`
 	text-align: center;
 	padding: 1rem 1.25rem;
 	border-radius: 12px;
-	background-color: ${(props) => (props.color === 'blue' ? props.theme.dark.blue[400] : props.theme.dark.red[400])};
+	background-color: ${(props) => (props.color === 'blue' ? props.theme.colors.blue[400] : props.theme.colors.red[400])};
 	background: ${(props) => props.mode === 'secondary' && 'none'};
 	border: 0;
 	box-shadow: ${(props) =>
@@ -25,7 +25,7 @@ export const StyledButton = styled.button<Partial<IButtonCore>>`
 	width: 100%;
 	max-width: ${sizes.xxs};
 	color: ${(props) =>
-		props.mode === 'primary' ? props.theme.dark.greyscale[100] : props.color && getButtonColor(props.color)};
+		props.mode === 'primary' ? props.theme.colors.greyscale[100] : props.color && getButtonColor(props.color)};
 	transition: transform 0.2s;
 
 	&:hover {

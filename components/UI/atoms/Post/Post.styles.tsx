@@ -6,7 +6,7 @@ import { sizes } from '@utils/mediaQueries';
 export const StyledPost = styled.a`
 	position: relative;
 	display: flex;
-	border: 1px solid ${(props) => transparentize(0.9, props.theme.dark.greyscale[100])};
+	border: 1px solid ${(props) => transparentize(0.9, props.theme.colors.greyscale[100])};
 	border-radius: 3px;
 	aspect-ratio: 1/1;
 	width: 200px;

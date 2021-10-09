@@ -3,7 +3,7 @@ import Script from 'next/script';
 import { ToastContainer } from 'react-toastify';
 import { ThemeProvider } from 'styled-components';
 import { toastConfig } from '@lib/toast';
-import { theme } from '@lib/themes';
+import { theme } from '@lib/theme';
 import 'react-toastify/dist/ReactToastify.css';
 
 import '@fontsource/ubuntu';

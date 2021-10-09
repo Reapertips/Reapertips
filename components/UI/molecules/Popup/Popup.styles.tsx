@@ -9,8 +9,8 @@ export const StyledPopup = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: ${(props) => props.theme.dark.blue[400]};
-	color: ${(props) => props.theme.dark.greyscale[100]};
+	background: ${(props) => props.theme.colors.blue[400]};
+	color: ${(props) => props.theme.colors.greyscale[100]};
 	width: ${sizes.xs};
 	max-width: 100%;
 	border-radius: 12px;

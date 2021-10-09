@@ -10,10 +10,34 @@ interface IPalette {
 	700: string;
 }
 
-// and extend them!
+type Heading = 'bold';
+type Paragraph = 'regular' | 'regularItalic' | 'bold';
+
+interface ITextStyle {
+	fontWeight: string;
+	fontStyle?: string;
+	lineHeight: string;
+	letterSpacing?: string;
+}
+
+type FontVariants<T> = {
+	[name: keyof T]: ITextStyle;
+};
+
+interface ITypeface<T> {
+	[id: number]: {
+		fontSize: string;
+		var: FontVariants;
+	};
+}
+
 declare module 'styled-components' {
 	export interface DefaultTheme {
-		dark: {
+		typography: {
+			heading: ITypeface<Heading>;
+			paragraph: ITypeface<Paragraph>;
+		};
+		colors: {
 			greyscale: IPalette;
 			greyedBlue: IPalette;
 			orange: IPalette;

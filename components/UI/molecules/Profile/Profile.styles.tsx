@@ -4,7 +4,7 @@ export const StyledProfile = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	color: ${(props) => props.theme.dark.greyscale[100]};
+	color: ${(props) => props.theme.colors.greyscale[100]};
 	margin: 3rem 0;
 `;
 

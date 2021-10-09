@@ -10,8 +10,8 @@ export const StyledSubmitButton = styled.input`
 	border-radius: 0.5rem;
 	font-size: 1rem;
 	font-weight: 600;
-	background: ${(props) => props.theme.dark.blue[400]};
-	color: ${(props) => props.theme.dark.greyscale[100]};
+	background: ${(props) => props.theme.colors.blue[400]};
+	color: ${(props) => props.theme.colors.greyscale[100]};
 	-webkit-appearance: none;
 
 	&:hover {

@@ -8,13 +8,13 @@ import { devices } from '@utils/mediaQueries';
 export const StyledNavbar = styled.nav`
 	position: relative;
 	padding: 2rem 1.25rem;
-	background: ${(props) => props.theme.dark.blue[400]};
+	background: ${(props) => props.theme.colors.blue[400]};
 	background-image: linear-gradient(
 		to top,
-		${(props) => transparentize(0.73, props.theme.dark.greyscale[700])},
+		${(props) => transparentize(0.73, props.theme.colors.greyscale[700])},
 		transparent
 	);
-	color: ${(props) => props.theme.dark.greyscale[100]};
+	color: ${(props) => props.theme.colors.greyscale[100]};
 	margin-bottom: 2.5rem;
 `;
 
