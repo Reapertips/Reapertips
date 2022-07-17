@@ -5,7 +5,7 @@ import Container from '@components/utils/Container';
 import Layout from '@components/utils/Layout';
 
 import type { IPage } from '@utils/types';
-import { getHomePage, client } from '@utils/queries';
+import { getHomePage } from '@lib/graphcms';
 
 export interface IHomePage extends IPage {
 	profile: IProfile;
@@ -25,8 +25,8 @@ export default function Home(props: IHomePage) {
 	);
 }
 
-export const getStaticProps = async () => {
-	const data: IHomePage = (await client.request(getHomePage)).homePages[0];
+export const getStaticProps = async ({ preview = false }) => {
+	const data: IHomePage = (await getHomePage(preview)).homePages[0];
 
 	return {
 		props: data

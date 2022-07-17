@@ -5,8 +5,8 @@ import { Gallery } from '@components/UI/organisms/Gallery';
 import Layout from '@components/utils/Layout';
 import Container from '@components/utils/Container';
 
-import { client, getDownloadsPage } from '@utils/queries';
 import type { IPage } from '@utils/types';
+import { getDownloadsPage } from '@lib/graphcms';
 
 export interface IDownloadsPage extends IPage {
 	popup: IPopup;
@@ -27,8 +27,8 @@ export default function Downloads(props: IDownloadsPage) {
 	);
 }
 
-export const getStaticProps = async () => {
-	const data = (await client.request(getDownloadsPage)).downloadPages[0];
+export const getStaticProps = async ({ preview = false }) => {
+	const data: IDownloadsPage = (await getDownloadsPage(preview)).downloadPages[0];
 
 	return {
 		props: data
