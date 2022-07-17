@@ -1,7 +1,7 @@
 module.exports = {
 	target: 'serverless',
 	images: {
-		domains: ['media.graphcms.com']
+		domains: ['media.graphassets.com']
 	},
 	reactStrictMode: true
 	// generateBuildId: async () => 'build'
