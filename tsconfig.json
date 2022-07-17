@@ -1,35 +1,72 @@
 {
-	"compilerOptions": {
-		"target": "es6",
-		"lib": ["dom", "dom.iterable", "esnext"],
-		"allowJs": true,
-		"skipLibCheck": true,
-		"strict": true,
-		"forceConsistentCasingInFileNames": true,
-		"noEmit": true,
-		"esModuleInterop": true,
-		"module": "esnext",
-		"moduleResolution": "node",
-		"resolveJsonModule": true,
-		"isolatedModules": true,
-		"jsx": "preserve",
-		"baseUrl": ".",
-		"paths": {
-			"@components/*": ["components/*"],
-			"@UI/*": ["components/UI/*"],
-			"@atoms/*": ["components/UI/atoms/*"],
-			"@molecules/*": ["components/UI/molecules/*"],
-			"@organisms/*": ["components/UI/organisms/*"],
-			"@templates/*": ["components/UI/templates/*"],
-			"@utils/*": ["utils/*"],
-			"@lib/*": ["lib/*"],
-			"@contexts/*": ["contexts/*"],
-			"@graphql/*": ["graphql/*"],
-			"@pages/*": ["pages/*"],
-			"@styles/*": ["styles/*"],
-			"@hooks/*": ["hooks/*"]
-		}
-	},
-	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-	"exclude": ["node_modules"]
+  "compilerOptions": {
+    "target": "es6",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": [
+        "components/*"
+      ],
+      "@UI/*": [
+        "components/UI/*"
+      ],
+      "@atoms/*": [
+        "components/UI/atoms/*"
+      ],
+      "@molecules/*": [
+        "components/UI/molecules/*"
+      ],
+      "@organisms/*": [
+        "components/UI/organisms/*"
+      ],
+      "@templates/*": [
+        "components/UI/templates/*"
+      ],
+      "@utils/*": [
+        "utils/*"
+      ],
+      "@lib/*": [
+        "lib/*"
+      ],
+      "@contexts/*": [
+        "contexts/*"
+      ],
+      "@graphql/*": [
+        "graphql/*"
+      ],
+      "@pages/*": [
+        "pages/*"
+      ],
+      "@styles/*": [
+        "styles/*"
+      ],
+      "@hooks/*": [
+        "hooks/*"
+      ]
+    },
+    "incremental": true
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
