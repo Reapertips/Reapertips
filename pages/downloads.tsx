@@ -13,11 +13,16 @@ export interface IDownloadsPage extends IPage {
 	posts: IPost[];
 }
 
-export default function Downloads(props: IDownloadsPage) {
-	const { pageTitle, popup, posts } = props;
+interface IProps {
+	page: IDownloadsPage;
+	preview: boolean;
+}
+
+export default function Downloads({ page, preview }: IProps) {
+	const { pageTitle, popup, posts } = page;
 
 	return (
-		<Layout {...props}>
+		<Layout {...page} preview={preview}>
 			<Navbar pageTitle={pageTitle} />
 			<Container>
 				<Popup icon={popup.icon} text={popup.text} />
@@ -28,9 +33,12 @@ export default function Downloads(props: IDownloadsPage) {
 }
 
 export const getStaticProps = async ({ preview = false }) => {
-	const data: IDownloadsPage = (await getDownloadsPage(preview)).downloadPages[0];
+	const page: IDownloadsPage = (await getDownloadsPage(preview)).downloadPages[0];
 
 	return {
-		props: data
+		props: {
+			page,
+			preview
+		}
 	};
 };

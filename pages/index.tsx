@@ -12,11 +12,16 @@ export interface IHomePage extends IPage {
 	buttons: IButton[];
 }
 
-export default function Home(props: IHomePage) {
-	const { profile, buttons } = props;
+interface IProps {
+	page: IHomePage;
+	preview: boolean;
+}
+
+export default function Home({ page, preview }: IProps) {
+	const { profile, buttons } = page;
 
 	return (
-		<Layout {...props}>
+		<Layout {...page} preview={preview}>
 			<Container>
 				<Profile {...profile} />
 				<ButtonGroup buttons={buttons} />
@@ -26,9 +31,12 @@ export default function Home(props: IHomePage) {
 }
 
 export const getStaticProps = async ({ preview = false }) => {
-	const data: IHomePage = (await getHomePage(preview)).homePages[0];
+	const page: IHomePage = (await getHomePage(preview)).homePages[0];
 
 	return {
-		props: data
+		props: {
+			page,
+			preview
+		}
 	};
 };
