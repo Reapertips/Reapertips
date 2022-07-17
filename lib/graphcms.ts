@@ -1,5 +1,3 @@
-import { IHomePage } from '../pages';
-
 interface FetchOptions {
 	variables?: { [key: string]: string };
 	preview?: boolean;
@@ -21,7 +19,6 @@ export async function fetchAPI(query: string, { variables, preview }: FetchOptio
 
 	if (json.errors) {
 		console.error(json.errors);
-		// throw new Error('Failed to fetch API');
 	}
 
 	return json.data;
