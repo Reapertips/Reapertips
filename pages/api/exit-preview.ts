@@ -9,5 +9,5 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 	const dev = process.env.NODE_ENV === 'development';
 	const BASE_URL = dev ? 'http://localhost:3000' : 'https://reapertips.com';
 
-	res.redirect(`${BASE_URL}/${previewData.slug}`);
+	res.redirect(`${BASE_URL}${previewData.slug}`);
 }
